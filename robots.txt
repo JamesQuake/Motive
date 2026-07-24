@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Version%201.2/
+Disallow: /Version 1.2/
+Sitemap: https://motivetoday.com/sitemap.xml
