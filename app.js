@@ -4,7 +4,7 @@ const SITE_INFO = {
   phone: '888 943 0888',
   addresses: [
     ['4801 Southwick Dr, Suite 270', 'Matteson, IL 60443'],
-    ['333 N Wood Dale Rd # 207', 'Wood Dale, IL 60191']
+    ['333 N Wood Dale Rd # 208', 'Wood Dale, IL 60191']
   ],
   statesServed: ['Illinois', 'Indiana', 'Wisconsin']
 };
@@ -12,6 +12,7 @@ const SITE_INFO = {
 document.addEventListener('DOMContentLoaded', () => {
   applySiteInfo();
   initializeLocalRating();
+  initializeHeroVideoFallback();
   initializeQuoteFlow();
   initializePersonalHeroSlider();
   initializeMegaMenuPreviews();
@@ -113,6 +114,74 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAllMenus(); });
 });
 
+function initializeHeroVideoFallback() {
+  document.querySelectorAll('.hero-section [data-vimeo-fallback]').forEach(wrapper => {
+    const frame = wrapper.querySelector('iframe[src^="https://player.vimeo.com/"]');
+    const fallback = wrapper.querySelector('.video-fallback');
+    if (!frame || !fallback || wrapper.dataset.videoInitialized) return;
+    wrapper.dataset.videoInitialized = 'true';
+
+    const playerOrigin = 'https://player.vimeo.com';
+    let state = 'LOADING';
+    let subscribed = false;
+    let previousSeconds = null;
+    let startupTimer;
+
+    const setState = next => {
+      if (state === next) return;
+      state = next;
+      clearTimeout(startupTimer);
+      wrapper.dataset.videoState = next;
+      fallback.hidden = next !== 'FALLBACK';
+      fallback.setAttribute('aria-hidden', String(next !== 'FALLBACK'));
+      frame.setAttribute('aria-hidden', String(next !== 'PLAYING'));
+    };
+    const send = (method, value) => {
+      const message = { method };
+      if (value !== undefined) message.value = value;
+      frame.contentWindow?.postMessage(JSON.stringify(message), playerOrigin);
+    };
+    const subscribe = () => {
+      if (subscribed) return;
+      subscribed = true;
+      // Observe the existing embed without controlling its playback or native loop.
+      ['playing', 'timeupdate', 'error'].forEach(event => {
+        send('addEventListener', event);
+      });
+    };
+
+    window.addEventListener('message', event => {
+      if (event.origin !== playerOrigin || event.source !== frame.contentWindow) return;
+      let message = event.data;
+      if (typeof message === 'string') {
+        try { message = JSON.parse(message); } catch { return; }
+      }
+      if (!message || typeof message !== 'object') return;
+      if (message.event === 'ready' || message.method === 'ping') {
+        subscribe();
+      } else if (message.event === 'playing') {
+        setState('PLAYING');
+      } else if (message.event === 'timeupdate') {
+        // Also detect playback that started before our event subscription.
+        if (state === 'PLAYING') return;
+        const seconds = message.data?.seconds;
+        if (!Number.isFinite(seconds) || seconds < 0) return;
+        if (previousSeconds !== null && seconds !== previousSeconds) setState('PLAYING');
+        previousSeconds = seconds;
+      } else if (message.event === 'error') {
+        previousSeconds = null;
+        setState('FALLBACK');
+      }
+    });
+
+    frame.addEventListener('load', () => send('ping'));
+    frame.addEventListener('error', () => setState('FALLBACK'));
+    // A single startup deadline covers blocked autoplay and an unreachable player.
+    // Keep listening in fallback so delayed playback recovers without a reload.
+    startupTimer = setTimeout(() => setState('FALLBACK'), 20000);
+    send('ping');
+  });
+}
 function initializeLocalRating() {
   document.querySelectorAll('[data-rating-source]').forEach(ratingEl => {
     const source = ratingEl.getAttribute('data-rating-source');
@@ -124,18 +193,29 @@ function initializeLocalRating() {
         return response.json();
       })
       .then(data => {
-        const rating = data.rating;
+        if (!data || typeof data !== 'object') return;
+        // Accept the existing numeric-string rating as well as scraper numbers.
+        const rating = typeof data.rating === 'number' ? data.rating :
+          (typeof data.rating === 'string' && /^\d(?:\.\d+)?$/.test(data.rating) ? Number(data.rating) : NaN);
         const reviewCount = data.reviewCount;
-        const label = data.source || 'reviews';
-        if (!rating || reviewCount === undefined) return;
+        if (!Number.isFinite(rating) || rating < 1 || rating > 5 ||
+            !Number.isSafeInteger(reviewCount) || reviewCount <= 0) return;
+
+        const label = 'Google reviews';
+        const displayedRating = rating.toFixed(1);
+        const displayedCount = reviewCount.toLocaleString('en-US');
 
         const ratingValue = ratingEl.querySelector('[data-rating-value]');
         const ratingCount = ratingEl.querySelector('[data-rating-count]');
         const ratingLabel = ratingEl.querySelector('[data-rating-label]');
-        if (ratingValue) ratingValue.textContent = String(rating);
-        if (ratingCount) ratingCount.textContent = `from ${Number(reviewCount).toLocaleString()}`;
+        if (ratingValue) ratingValue.textContent = displayedRating;
+        if (ratingCount) ratingCount.textContent = `from ${displayedCount}`;
         if (ratingLabel) ratingLabel.textContent = label;
-        ratingEl.setAttribute('aria-label', `${rating} rating from ${Number(reviewCount).toLocaleString()} ${label}`);
+        ratingEl.querySelectorAll('.stars i').forEach((star, index) => {
+          const fill = Math.max(0, Math.min(1, rating - index)) * 100;
+          star.style.setProperty('--star-fill', `${fill}%`);
+        });
+        ratingEl.setAttribute('aria-label', `${displayedRating} out of 5 stars from ${displayedCount} ${label}`);
       })
       .catch(() => {
         // Keep the embedded fallback text when the local JSON cannot be loaded.
@@ -145,6 +225,14 @@ function initializeLocalRating() {
 
 function initializeQuoteFlow() {
   normalizeQuoteModal();
+  const defaultInsuranceOptions = [
+    { surveyId: 'DDrT5ZLhDEoqP4Jmg9X9', title: 'Personal Insurance' },
+    { surveyId: 'STYcNr0ZkXucPSUdoTHE', title: 'Commercial Auto' },
+    { surveyId: 'RW0jwFCB03NszVELqqSa', title: 'Commercial Insurance' },
+    { surveyId: 'qjuynuDi5uLhptxzWksw', title: 'Trucking Insurance' },
+    { surveyId: '07vbqHxpBy7M4r4rxWcC', title: 'Freight Broker' },
+    { surveyId: 'emSzkTAQ7h7mH2VSg3zq', title: 'Specialty Transportation' }
+  ];
 
   const quoteModalEl = document.getElementById('quoteModal');
   const quoteModalTitle = document.getElementById('quoteModalTitle');
@@ -167,9 +255,10 @@ function initializeQuoteFlow() {
   const usesMobileInsuranceMenu = () => window.matchMedia('(max-width: 991.98px)').matches;
   const heroInsuranceLinks = heroDropdown
     ? Array.from(heroDropdown.querySelectorAll('.dropdown-menu-custom a[data-survey-id]'))
-    : Array.from(document.querySelectorAll('.survey-direct-option[data-survey-id]')).filter((link, index, links) => (
-      links.findIndex(candidate => candidate.dataset.surveyId === link.dataset.surveyId) === index
-    ));
+    : defaultInsuranceOptions.map(option => ({
+      dataset: { surveyId: option.surveyId, surveyTitle: option.title },
+      textContent: option.title
+    }));
 
   const getOptionData = option => ({
     surveyId: option.dataset.surveyId || '',

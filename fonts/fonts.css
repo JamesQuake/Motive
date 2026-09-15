@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('inter-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Fallback';
+  font-style: normal;
+  font-weight: 300 800;
+  src: local('Arial');
+  size-adjust: 97.92%;
+  ascent-override: 98.93%;
+  descent-override: 24.63%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('montserrat-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Montserrat Fallback';
+  font-style: normal;
+  font-weight: 500 700;
+  src: local('Arial');
+  size-adjust: 111.13%;
+  ascent-override: 87.11%;
+  descent-override: 22.59%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Montserrat Fallback';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Arial');
+  size-adjust: 117.20%;
+  ascent-override: 82.60%;
+  descent-override: 21.42%;
+  line-gap-override: 0%;
+}

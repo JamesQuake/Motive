@@ -4,6 +4,11 @@ RewriteEngine On
 # Custom error page
 ErrorDocument 404 /404.html
 
+# Daily rating maintenance runs from the command line, never through the website.
+<FilesMatch "^(scrape-google-reviews\.ps1|google-rating-extract\.js|site-rating\.json\.[a-f0-9]+\.tmp)$">
+  Require all denied
+</FilesMatch>
+
 # HTTPS and preferred host
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^motivetoday\.com$ [NC]
