@@ -108,5 +108,6 @@
       if (insuranceType) quoteParameters.insurance_type = insuranceType;
       sendEvent('quote_cta_click', quoteParameters);
     }
-  });
+  // Capture direct survey clicks before the shared modal handler stops propagation.
+  }, true);
 })();

@@ -1,11 +1,17 @@
 Options -Indexes
 RewriteEngine On
 
+# Keep project documentation and local audit evidence off the public website.
+<FilesMatch "(?i)\.md$">
+  Require all denied
+</FilesMatch>
+RewriteRule ^audit(?:-[^/]+)?(?:/|$) - [F,L,NC]
+
 # Custom error page
 ErrorDocument 404 /404.html
 
 # Daily rating maintenance runs from the command line, never through the website.
-<FilesMatch "^(scrape-google-reviews\.ps1|google-rating-extract\.js|site-rating\.json\.[a-f0-9]+\.tmp)$">
+<FilesMatch "^(scrape-google-reviews\.ps1|upload-google-rating\.ps1|google-rating-extract\.js|site-rating\.json\.[a-f0-9]+\.tmp)$">
   Require all denied
 </FilesMatch>
 
@@ -35,7 +41,7 @@ RewriteRule ^([A-Za-z0-9_-]+)/?$ /$1.html [R=301,L]
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
-  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://apiautomate.nowcerts.com; frame-src https://player.vimeo.com https://apiautomate.nowcerts.com; connect-src 'self'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://apiautomate.nowcerts.com https://www.googletagmanager.com https://www.clarity.ms; frame-src https://player.vimeo.com https://apiautomate.nowcerts.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms https://*.clarity.ms; upgrade-insecure-requests"
   <FilesMatch "\.(html|css|js|json|xml)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"

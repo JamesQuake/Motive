@@ -1,0 +1,19 @@
+{
+  "company": "MOTIVE INSURANCE LLC",
+  "logo": "/images/logo.png",
+  "phone": "888 943 0888",
+  "phoneHref": "tel:8889430888",
+  "locations": [
+    { "street": "4801 Southwick Dr, Suite 270", "city": "Matteson, IL 60443" },
+    { "street": "333 N Wood Dale Rd # 208", "city": "Wood Dale, IL 60191" }
+  ],
+  "states": ["Illinois", "Indiana", "Wisconsin"],
+  "socials": [
+    { "name": "Facebook", "url": "https://www.facebook.com/motiveinsurance/" },
+    { "name": "X", "url": "https://x.com/MotiveInsurance" },
+    { "name": "LinkedIn", "url": "https://linkedin.com/company/motive-insurance" },
+    { "name": "Instagram", "url": "https://www.instagram.com/motiveinsurance/" },
+    { "name": "YouTube", "url": "https://www.youtube.com/@MotiveInsurance" },
+    { "name": "TikTok", "url": "https://www.tiktok.com/@motive.insurance" }
+  ]
+}

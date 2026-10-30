@@ -1,5 +1,8 @@
 // Executed only by the daily browser scraper; never included in the homepage.
 function readMotiveGoogleRating() {
+  if (location.href === 'about:blank' || !document.body) {
+    return { pending: 'Waiting for Google Maps to finish navigating.' };
+  }
   const visible = element => element.getClientRects().length > 0 &&
     getComputedStyle(element).visibility !== 'hidden';
   const normalize = text => (text || '').replace(/\s+/g, ' ').trim();
@@ -91,6 +94,9 @@ function readMotiveGoogleRating() {
         container.querySelector('[data-review-id], [role="article"], [role="feed"]')) break;
     const values = summaryValues(container);
     if (values) return values;
+  }
+  if (/limited view of Google Maps/i.test(bodyText)) {
+    return { pending: 'Google is hiding review counts in its signed-out limited view. Run scrape-google-reviews.ps1 -SetupBrowser and sign in to Google.' };
   }
   return { pending: 'Waiting for a valid rating and total review count in the business header.' };
 }

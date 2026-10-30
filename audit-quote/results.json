@@ -1,0 +1,180 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1425,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-hero-1672.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-preparation-640.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-closing-640.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "client": 768,
+      "scroll": 753,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-hero-1672.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-preparation-1024.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-closing-1024.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "client": 390,
+      "scroll": 375,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-hero-1672.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-preparation-1024.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-closing-1024.webp",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "client": 320,
+      "scroll": 305,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-hero-1672.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-preparation-1024.webp",
+          "loaded": true
+        },
+        {
+          "src": "http://127.0.0.1:8765/images/box-truck-quote-closing-1024.webp",
+          "loaded": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "failed": [
+    {
+      "url": "https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a4f2edc5a878e26f/SY0nEc2UprVpY60ialAJ50NlDOV2AaYe9NQNCMjcq6Y-1792781440-1.2.1.1-PE56F9Zu43Qn4C1bHY6KDSuRScjKK_Cck7lOettlR0JSvRVbtVRWKwIzYpxE_sRt",
+      "error": "net::ERR_NAME_NOT_RESOLVED"
+    }
+  ],
+  "surveyResponses": [
+    {
+      "url": "https://apiautomate.nowcerts.com/widget/survey/qjuynuDi5uLhptxzWksw",
+      "status": 200
+    }
+  ],
+  "events": [
+    [
+      "event",
+      "insurance_type_click",
+      {
+        "insurance_type": "Trucking Insurance",
+        "cta_location": "hero",
+        "page_path": "/box-truck-insurance-quote.html"
+      }
+    ],
+    [
+      "event",
+      "quote_cta_click",
+      {
+        "cta_text": "Request My Quote ↗",
+        "cta_location": "hero",
+        "page_path": "/box-truck-insurance-quote.html",
+        "insurance_type": "Trucking Insurance"
+      }
+    ],
+    [
+      "event",
+      "insurance_type_click",
+      {
+        "insurance_type": "Trucking Insurance",
+        "cta_location": "main_content",
+        "page_path": "/box-truck-insurance-quote.html"
+      }
+    ],
+    [
+      "event",
+      "quote_cta_click",
+      {
+        "cta_text": "Request My Quote ↗",
+        "cta_location": "main_content",
+        "page_path": "/box-truck-insurance-quote.html",
+        "insurance_type": "Trucking Insurance"
+      }
+    ],
+    [
+      "event",
+      "insurance_type_click",
+      {
+        "insurance_type": "Trucking Insurance",
+        "cta_location": "main_content",
+        "page_path": "/box-truck-insurance-quote.html"
+      }
+    ],
+    [
+      "event",
+      "quote_cta_click",
+      {
+        "cta_text": "Request My Quote ↗",
+        "cta_location": "main_content",
+        "page_path": "/box-truck-insurance-quote.html",
+        "insurance_type": "Trucking Insurance"
+      }
+    ],
+    [
+      "event",
+      "insurance_type_click",
+      {
+        "insurance_type": "Trucking Insurance",
+        "cta_location": "hero",
+        "page_path": "/box-truck-insurance-quote.html"
+      }
+    ],
+    [
+      "event",
+      "quote_cta_click",
+      {
+        "cta_text": "Request My Quote ↗",
+        "cta_location": "hero",
+        "page_path": "/box-truck-insurance-quote.html",
+        "insurance_type": "Trucking Insurance"
+      }
+    ],
+    [
+      "event",
+      "phone_click",
+      {
+        "cta_location": "hero",
+        "page_path": "/box-truck-insurance-quote.html"
+      }
+    ]
+  ],
+  "checks": "FAQ keyboard, CTA keyboard, correct survey, modal close/Escape, focus return, mobile navigation, phone event, internal links, reduced motion, single H1, JSON-LD"
+}

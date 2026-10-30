@@ -1,0 +1,43 @@
+.fleet-page-body .container { width: 100%; max-width: 1320px; padding-left: 20px; padding-right: 20px; }
+.fleet-page .quote-hero { min-height: 580px; }
+.fleet-page .quote-hero-photo img { object-position: 70% center; }
+.fleet-page .quote-hero .hero-gradient { background: linear-gradient(90deg, #003366 0%, rgba(0,51,102,.96) 25%, rgba(0,51,102,.72) 45%, rgba(0,51,102,.08) 76%); }
+.fleet-breadcrumb { padding-top: 20px; padding-bottom: 12px; font-size: .85rem; }
+.fleet-jump { border-bottom: 1px solid #dce3ea; background: white; }
+.fleet-jump .container { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+.fleet-jump a { display: inline-flex; align-items: center; min-height: 48px; font-size: .9rem; font-weight: 700; }
+.fleet-cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.fleet-cards article { display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border: 1px solid #dce3ea; border-radius: 16px; background: white; }
+.fleet-cards article a { margin-top: auto; font-weight: 650; font-size: .95rem; }
+.fleet-number { color: var(--motive-orange); font-size: .8rem; font-weight: 800; margin-bottom: 18px; }
+.fleet-callout { border-left: 4px solid var(--motive-orange); padding: 24px 28px; background: white; border-radius: 0 14px 14px 0; }
+.fleet-callout p:last-child { margin-bottom: 0; }
+.fleet-cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6%; }
+.fleet-page .quote-table-wrap table { table-layout: fixed; }
+.fleet-page .quote-table-wrap th, .fleet-page .quote-table-wrap td { width: auto; overflow-wrap: break-word; }
+.fleet-page .quote-table-wrap th:first-child { width: 25%; }
+.fleet-page .accordion-button { font-size: 1.05rem; line-height: 1.5; }
+.fleet-page .accordion-body p { max-width: none; }
+.fleet-page .accordion-body p:last-child { margin-bottom: 0; }
+.fleet-page .fleet-faq-heading { max-width: none; text-align: center; margin-bottom: 32px; }
+.fleet-page .fleet-faq-heading h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--motive-blue); }
+.fleet-page .fleet-faq-heading h2 span { color: var(--motive-orange); }
+.fleet-final { background: var(--motive-blue); color: white; }
+.fleet-page .fleet-final h2, .fleet-page .fleet-final .quote-call { color: white; }
+.fleet-small { font-size: .85rem; margin-top: 24px; }
+@media (max-width: 991.98px) {
+  .fleet-page .quote-hero { min-height: 0; }
+  .fleet-page .quote-hero-photo img { max-height: 400px; object-fit: cover; }
+  .fleet-cards { grid-template-columns: 1fr; }
+  .fleet-cards article { padding: 24px; }
+}
+@media (max-width: 575.98px) {
+  .fleet-page-body .container, .fleet-page-body .fleet-page .container { padding-left: 12px; padding-right: 12px; }
+  .fleet-cost-grid { grid-template-columns: 1fr; gap: 0; }
+  .fleet-jump .container { gap: 0 20px; }
+  .fleet-page .quote-table-wrap th, .fleet-page .quote-table-wrap td { padding: 12px 8px; font-size: .8rem; }
+  .fleet-page .quote-table-wrap th:first-child { width: 27%; }
+  .fleet-page .accordion-button { padding: 18px 14px; }
+  .fleet-page .accordion-body { padding: 18px 14px; }
+  .fleet-page .quote-button { white-space: normal; text-align: center; }
+}

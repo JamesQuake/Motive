@@ -5,6 +5,28 @@ html {
   scrollbar-gutter: stable;
 }
 
+:root {
+  --site-gutter-desktop: 20px;
+  --site-gutter-mobile: 12px;
+}
+
+/* One site-wide content rail: larger on desktop/tablet, compact on phones. */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-gutter-desktop);
+  padding-right: var(--site-gutter-desktop);
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: var(--site-gutter-mobile);
+    padding-right: var(--site-gutter-mobile);
+  }
+}
+
 body,
 button,
 input,
@@ -130,6 +152,7 @@ h4,
 
 /* Ratings section with fade animation */
 .rating-content { transition: opacity 0.8s ease-in-out; }
+.rating [hidden] { display: none !important; }
 .rating-placeholder .stars { display: inline-flex; gap: 3px; margin-right: 0.45rem; }
 .rating-live { display: block; margin-top: 0.45rem; min-height: 2.2rem; }
 .review-item { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; opacity: 0; animation: fadeInReview 0.6s ease forwards; }
@@ -198,14 +221,14 @@ h4,
 }
 
 .contact-hero {
-  --hero-img: url('images/illinois_hero.png');
-  background-image: url('images/illinois_hero.png');
+  --hero-img: url('images/illinois_hero.jpg');
+  background-image: url('images/illinois_hero.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .contact-hero .hero-bg-image {
-  background-image: url('images/illinois_hero.png');
+  background-image: url('images/illinois_hero.jpg');
 }
 
 .insight-date-pill {
@@ -474,8 +497,8 @@ h4,
 
   .container {
     max-width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: var(--site-gutter-mobile);
+    padding-right: var(--site-gutter-mobile);
   }
 
   .navbar,
@@ -581,8 +604,8 @@ h4,
 
 @media (max-width: 575.98px) {
   .container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: var(--site-gutter-mobile);
+    padding-right: var(--site-gutter-mobile);
   }
 
   .top-tabs {
@@ -1988,7 +2011,7 @@ h4,
     transform: none !important;
   }
 
-  .support-page .modern-hero[style*="images/illinois_hero.png"] .hero-bg-image {
+  .support-page .modern-hero[style*="images/illinois_hero.jpg"] .hero-bg-image {
     background-position: 50% 45%;
   }
 
@@ -2134,7 +2157,7 @@ h4,
     background-position: 72% center;
   }
 
-  .product-page > .modern-hero[style*="images/personal_home2.png"] .hero-bg-image {
+  .product-page > .modern-hero[style*="images/personal_home2.jpg"] .hero-bg-image {
     background-position: 70% center;
   }
 
@@ -2150,7 +2173,7 @@ h4,
     background-position: 78% center;
   }
 
-  .product-page > .modern-hero[style*="images/personal_bundle.png"] .hero-bg-image {
+  .product-page > .modern-hero[style*="images/personal_bundle.jpg"] .hero-bg-image {
     background-position: 68% center;
   }
 
@@ -2990,7 +3013,7 @@ h4,
     background-position: 86% center;
   }
 
-  .product-page.commercial-page > .modern-hero[style*="generalliability.png"] .hero-bg-image {
+  .product-page.commercial-page > .modern-hero[style*="generalliability.jpg"] .hero-bg-image {
     background-position: 84% center;
   }
 
@@ -3064,7 +3087,7 @@ h4,
     background-position: 88% center;
   }
 
-  .product-page.commercial-page > .modern-hero[style*="generalliability.png"] .hero-bg-image {
+  .product-page.commercial-page > .modern-hero[style*="generalliability.jpg"] .hero-bg-image {
     background-position: 86% center;
   }
 
@@ -3663,7 +3686,7 @@ h4,
     overflow: hidden;
     border-radius: 24px;
     background-color: var(--motive-blue);
-    background-image: var(--mega-preview-img, url('images/automobile_hero.png'));
+    background-image: var(--mega-preview-img, url('images/automobile_hero.jpg'));
     background-size: cover;
     background-position: var(--mega-preview-position, 75% center) !important;
     background-repeat: no-repeat;
@@ -4196,7 +4219,7 @@ h4,
 }
 
 .box-truck-guide .box-truck-article {
-  max-width: 1120px;
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -4891,4 +4914,15 @@ h4,
 .mega-menu-panel,
 .standard-submenu {
   transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
+}
+
+/* Approved customer FAQs: shared Motive accordion and site rail. */
+.approved-faq-section > .container { width: 100%; max-width: 1320px; padding-left: 20px; padding-right: 20px; }
+.approved-faq-section .accordion-button { line-height: 1.5; white-space: normal; }
+.approved-faq-section .accordion-body p { margin-bottom: 1rem; }
+.approved-faq-section .accordion-body p:last-child { margin-bottom: 0; }
+.approved-faq-section .btn { white-space: normal; max-width: 100%; }
+@media (max-width: 575.98px) {
+  .approved-faq-section > .container { padding-left: 12px; padding-right: 12px; }
+  .approved-faq-section .accordion-button, .approved-faq-section .accordion-body { padding: 16px; }
 }

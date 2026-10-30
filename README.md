@@ -1,85 +1,112 @@
-# Motive
+﻿# Motive
+
+## Contact details
+
+All 31 site footers load their locations, phone number, states, company name and
+social links from `data/site-footer.json` through `app.js`. Wood Dale uses suite
+208. The repeated footer addresses have been removed from the HTML.
+
+For the initial deployment, upload the 31 updated HTML pages, `app.js`, and
+`data/site-footer.json` together. Upload the updated `.htaccess` as well to block
+project documentation and audit folders. Do not upload the audit folder.
+
+After this initial deployment, update footer details by uploading only
+`data/site-footer.json`. Footer data is fetched without caching on each page
+load. If the data cannot load or is invalid, visitors retain Contact and Privacy
+links instead of seeing an old address. JavaScript is required for the full
+footer. Preview through an HTTP server, not by double-clicking HTML files.
+
+Addresses in page content (such as Contact Us) are separate from the footer and
+must still be updated when a location changes.
 
 ## Daily Google rating refresh
 
-The homepage reads `data/site-rating.json` using the existing `initializeLocalRating()`
-function in `app.js`. It fetches only this local static file, with caching disabled.
-It never launches the scraper or contacts Google for review data. `style.css` fills
-each existing star according to the numeric rating (for example, 4.8 fills the fifth
-star to 80%). The HTML includes the last verified initial values as a fallback.
+The homepage fetches `data/site-rating.json` with caching disabled. No review count
+is embedded in the page. It shows only five stars while fetching and
+when the request fails or data is invalid or unverified. Valid, verified data
+adds the rating and review count regardless of its timestamp. `lastUpdated`
+records the scrape date; it does not control whether the rating is displayed.
+A manually entered
+count is not treated as a verified scrape.
 
-`scrape-google-reviews.ps1` runs with the existing Windows PowerShell 5.1 and installed
-Chrome (or Edge). This static project has no Node.js setup. The script starts a
-temporary headless browser, opens the public Google Maps search for **Motive Insurance
-Solutions, Matteson**, and executes `google-rating-extract.js` against the rendered
-business panel. It checks the business name plus the website or Matteson address.
-It reads only the aggregate star rating and total review count using accessible
-labels and visible summary text. There are no Google APIs, keys, databases, packages,
-or persistent backend services. The loopback connection controls only the temporary
-browser, which is closed after each run.
+The existing Windows task, **Motive Insurance - Daily Google Rating**, runs
+`scrape-google-reviews.ps1` daily at 08:00 in the Windows system time zone
+(Central). By default this updates the local website JSON. With `-OutputJson`,
+it also saves JSON to the specified existing folder for Google Drive to sync.
+It does not publish to the website.
+The computer must be on, connected to the internet, and the task's Windows user
+must be logged in. Missed runs start when available; failed runs retry up to
+three times at 15-minute intervals.
 
-The saved file uses numeric values and a UTC timestamp:
+### Browser operation
 
-```json
-{
-  "rating": 5.0,
-  "reviewCount": 145,
-  "source": "Google reviews",
-  "lastUpdated": "2026-09-10T15:22:07Z"
-}
+Google returned a limited Maps view without review counts in headless mode.
+The updater now starts ordinary Chrome hidden, reads the public listing, then
+closes Chrome. It uses a dedicated persistent browser profile, outside this website
+at `%LOCALAPPDATA%\MotiveRating\Browser`. It does not access or copy credentials
+from your usual Chrome profile. No API key, service, or website rebuild is used.
+
+On October 26, 2026, the repaired scraper independently read 5.0 from 155
+Google reviews and saved verified JSON. Browser startup now waits for a
+readable debugging-port file and a ready tab instead of racing Chrome's file
+write. The extractor also waits through the initial blank navigation page.
+
+If a future run requires sign-in, run this locally and sign in in the browser,
+then return to the
+Motive Insurance Solutions Maps listing in the same tab:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scrape-google-reviews.ps1 -SetupBrowser
 ```
 
-Both values must pass validation before any replacement: rating must be a finite
-number from 1 through 5, and review count must be a positive safe integer. The script
-writes a temporary file alongside the existing JSON and atomically replaces the JSON
-only when the new file is complete. An unsuccessful scrape, verification page,
-ambiguous listing, invalid data, timeout, or write failure leaves the previous JSON
-untouched and exits with code 1. Successful runs exit with code 0. `lastUpdated` changes
-only after a successful save. Invalid JSON or a failed homepage fetch preserves the
-already displayed values and stars. Google's markup can change; inspect a failed run
-manually and update the selectors if necessary. There are no automatic retries.
-
-From this project's root, run a scrape and save the result:
+Setup waits up to ten minutes for a valid business rating and review count. It
+saves only a verified result and closes the browser. After using setup,
+verify a separate unattended run:
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scrape-google-reviews.ps1
 ```
 
-Read and validate without changing the saved file:
+Daily runs use the same dedicated profile in a hidden ordinary browser. If Google expires
+the session or presents a verification page, run setup again and handle Google's
+normal sign-in yourself. The updater does not bypass verification challenges.
+
+### Checks and daily upload
+
+The scraper verifies the business name and website or Matteson address, then
+reads the aggregate rating and total count from that business's header. Both
+must pass validation. Successful runs atomically replace `data/site-rating.json`
+and set `verified: true` with a fresh UTC `lastUpdated`. Failed runs exit 1 and
+leave the previous data untouched; they never advance its timestamp.
+
+Read without saving:
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scrape-google-reviews.ps1 -DryRun
 ```
 
-If the browser is installed elsewhere, supply `-BrowserPath "C:\path\to\chrome.exe"`.
-
-### Existing Windows Task Scheduler
-
-The task **Motive Insurance - Daily Google Rating** is installed on this Windows
-machine. It invokes the scraper in this project's folder once daily at **06:00 in
-the Windows system time zone** (currently Central Time). It runs as the current
-Windows user while that user is logged in, including when the screen is locked.
-Windows is configured to start a missed run when available, ignore overlapping
-instances, and stop the task after five minutes. The scraper also prevents overlapping
-manual runs. The computer must be available with internet access for the scrape.
-
-To install the same task on the Windows machine that serves or publishes this folder:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scrape-google-reviews.ps1 -InstallDailyTask
-```
-
-Installation does not overwrite an existing task of the same name. Check its status
-and next run in Task Scheduler, or use:
+Check the task:
 
 ```powershell
 Get-ScheduledTaskInfo -TaskName 'Motive Insurance - Daily Google Rating'
+Get-Content .\data\site-rating.json
 ```
 
-**Deployment:** this local task updates this working folder only; it does not upload
-files to `motivetoday.com`. The live website must serve this updated folder, or the
-existing deployment process must publish `data/site-rating.json` after successful
-scrapes. Hosting access and the publishing process were not present in this project.
-Uploading the site once does not install a scheduled task on the production server.
-The `.htaccess` rule prevents the maintenance scripts and temporary rating files
-from being requested through Apache.
+Upload `data/site-rating.json` after a successful run, or have Make copy the
+synced JSON to the website. No CSV conversion is needed. Deploy the updated
+`index.html` and `app.js` for the stars-only fallback without a timestamp cutoff.
+Never upload the dedicated browser profile. The maintenance scripts are blocked
+by `.htaccess`. No upload automation or API integration is installed.
+
+To set a Google Drive destination, use its actual synced local path:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scrape-google-reviews.ps1 -OutputJson "<synced-folder>\site-rating.json"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scrape-google-reviews.ps1 -InstallDailyTask -OutputJson "<synced-folder>\site-rating.json"
+```
+
+Verify the first command succeeds before installing the task. The installation
+command updates the existing named task; it does not create a second schedule.
+Google Drive for desktop must be signed in and syncing that folder. The task
+retries failed runs three times at 15-minute intervals. `-BrowserPath` can select
+Chrome or Edge if installed elsewhere.

@@ -1,16 +1,7 @@
 // MOTIVE INSURANCE - Client-side interactions
 'use strict';
-const SITE_INFO = {
-  phone: '888 943 0888',
-  addresses: [
-    ['4801 Southwick Dr, Suite 270', 'Matteson, IL 60443'],
-    ['333 N Wood Dale Rd # 208', 'Wood Dale, IL 60191']
-  ],
-  statesServed: ['Illinois', 'Indiana', 'Wisconsin']
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  applySiteInfo();
+  initializeSharedFooter();
   initializeLocalRating();
   initializeHeroVideoFallback();
   initializeQuoteFlow();
@@ -114,6 +105,123 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAllMenus(); });
 });
 
+function initializeSharedFooter() {
+  const footers = document.querySelectorAll('[data-site-footer]');
+  if (!footers.length) return;
+  const socialStyles = {
+    Facebook: ['bg-facebook', 'fa-facebook-f'],
+    X: ['bg-twitter', 'fa-twitter'],
+    LinkedIn: ['bg-linkedin', 'fa-linkedin-in'],
+    Instagram: ['bg-instagram', 'fa-instagram'],
+    YouTube: ['bg-youtube', 'fa-youtube'],
+    TikTok: ['bg-tiktok', 'fa-tiktok']
+  };
+  const text = value => typeof value === 'string' && value.trim().length > 0;
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 10000);
+  fetch('/data/site-footer.json', { cache: 'no-store', signal: controller.signal })
+    .then(response => {
+      if (!response.ok) throw new Error('Footer unavailable');
+      return response.json();
+    })
+    .then(data => {
+      if (!data || !text(data.company) || !text(data.phone) ||
+          typeof data.phoneHref !== 'string' || !/^tel:\+?[\d ()-]+$/.test(data.phoneHref) ||
+          typeof data.logo !== 'string' || !/^\/images\/[a-zA-Z0-9_./-]+$/.test(data.logo) ||
+          !Array.isArray(data.locations) || !data.locations.length ||
+          !data.locations.every(location => location && text(location.street) && text(location.city)) ||
+          !Array.isArray(data.states) || !data.states.length || !data.states.every(text) ||
+          !Array.isArray(data.socials) ||
+          !data.socials.every(social => social && Object.hasOwn(socialStyles, social.name) &&
+            typeof social.url === 'string' && /^https:\/\/[^/\s]+(?:\/[^\s]*)?$/.test(social.url))) {
+        throw new Error('Invalid footer data');
+      }
+      footers.forEach(footer => {
+        // Only this fixed layout is HTML. All fetched text is inserted with textContent.
+        const container = document.createElement('div');
+        container.className = 'container pt-5 pb-4';
+        container.innerHTML = `
+<div class="row g-5 align-items-start">
+  <div class="col-md-5" data-footer-location-column>
+    <h5 class="footer-title mt-3">Locations</h5>
+    <address class="small" data-footer-addresses></address>
+  </div>
+  <div class="col-md-3">
+    <h5 class="footer-title mt-3">States We Serve</h5>
+    <ul class="list-unstyled small state-list" data-footer-states></ul>
+  </div>
+  <div class="col-md-4">
+    <h5 class="footer-title mt-3">Connect With Us</h5>
+    <div class="d-flex flex-wrap gap-3 mt-2 footer-socials" data-footer-socials></div>
+  </div>
+</div>
+<hr class="mt-5 opacity-25"/>
+<div class="row mt-4"><div class="col text-center small"><p data-footer-copyright></p></div></div>`;
+        const icon = classes => {
+          const element = document.createElement('i');
+          element.className = classes;
+          element.setAttribute('aria-hidden', 'true');
+          return element;
+        };
+        const phoneLink = () => {
+          const link = document.createElement('a');
+          link.href = data.phoneHref;
+          link.className = 'text-white text-decoration-none';
+          link.textContent = data.phone;
+          return link;
+        };
+        const logo = document.createElement('img');
+        logo.src = data.logo;
+        logo.alt = 'Motive Insurance';
+        logo.className = 'footer-logo mb-2';
+        logo.style.maxHeight = '50px';
+        container.querySelector('[data-footer-location-column]').prepend(logo);
+        const address = container.querySelector('[data-footer-addresses]');
+        data.locations.forEach(location => {
+          const city = document.createElement('span');
+          city.className = 'ms-4';
+          city.textContent = location.city;
+          address.append(icon('fa-solid fa-location-dot text-orange me-2'),
+            document.createTextNode(location.street), document.createElement('br'),
+            city, document.createElement('br'));
+        });
+        address.append(icon('fa-solid fa-phone text-orange me-2'), phoneLink());
+        const states = container.querySelector('[data-footer-states]');
+        data.states.forEach(state => {
+          const item = document.createElement('li');
+          item.append(icon('fa-solid fa-check-circle text-orange me-2'), document.createTextNode(' ' + state));
+          states.append(item);
+        });
+        const socials = container.querySelector('[data-footer-socials]');
+        data.socials.forEach(social => {
+          const [background, glyph] = socialStyles[social.name];
+          const link = document.createElement('a');
+          link.className = 'social-icon ' + background;
+          link.href = social.url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.setAttribute('aria-label', social.name);
+          link.append(icon('fa-brands ' + glyph));
+          socials.append(link);
+        });
+        const privacy = document.createElement('a');
+        privacy.href = '/privacy.html';
+        privacy.className = 'text-white text-decoration-none';
+        privacy.textContent = 'PRIVACY POLICY';
+        container.querySelector('[data-footer-copyright]').append(
+          document.createTextNode(`© ${new Date().getFullYear()} ${data.company} | `),
+          phoneLink(), document.createTextNode(' | '), privacy);
+        footer.replaceChildren(container);
+        footer.dataset.footerState = 'loaded';
+      });
+    })
+    .catch(() => {
+      // Keep the contact/privacy fallback; never substitute stale address details.
+      footers.forEach(footer => { footer.dataset.footerState = 'unavailable'; });
+    })
+    .finally(() => window.clearTimeout(timeout));
+}
+
 function initializeHeroVideoFallback() {
   document.querySelectorAll('.hero-section [data-vimeo-fallback]').forEach(wrapper => {
     const frame = wrapper.querySelector('iframe[src^="https://player.vimeo.com/"]');
@@ -185,21 +293,41 @@ function initializeHeroVideoFallback() {
 function initializeLocalRating() {
   document.querySelectorAll('[data-rating-source]').forEach(ratingEl => {
     const source = ratingEl.getAttribute('data-rating-source');
+    const status = ratingEl.querySelector('[data-rating-status]');
+    const content = ratingEl.querySelector('.rating-content');
+    const showStarsOnly = () => {
+      if (status) {
+        status.hidden = true;
+        status.textContent = '';
+      }
+      if (content) content.hidden = false;
+      ratingEl.querySelectorAll('[data-rating-value], [data-rating-count], [data-rating-label]').forEach(el => {
+        el.textContent = '';
+        el.hidden = true;
+      });
+      ratingEl.querySelectorAll('.stars i').forEach(star => star.style.setProperty('--star-fill', '100%'));
+      ratingEl.setAttribute('aria-busy', 'false');
+    };
+    // Keep the same quiet, stars-only presentation during loading and on failure.
+    showStarsOnly();
     if (!source || !window.fetch) return;
 
-    fetch(source, { cache: 'no-store' })
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 10000);
+    fetch(source, { cache: 'no-store', signal: controller.signal })
       .then(response => {
         if (!response.ok) throw new Error('Rating data unavailable');
         return response.json();
       })
       .then(data => {
-        if (!data || typeof data !== 'object') return;
+        if (!data || typeof data !== 'object') throw new Error('Invalid rating data');
+        if (data.verified !== true) throw new Error('Rating data is unverified');
         // Accept the existing numeric-string rating as well as scraper numbers.
         const rating = typeof data.rating === 'number' ? data.rating :
           (typeof data.rating === 'string' && /^\d(?:\.\d+)?$/.test(data.rating) ? Number(data.rating) : NaN);
         const reviewCount = data.reviewCount;
         if (!Number.isFinite(rating) || rating < 1 || rating > 5 ||
-            !Number.isSafeInteger(reviewCount) || reviewCount <= 0) return;
+            !Number.isSafeInteger(reviewCount) || reviewCount <= 0) throw new Error('Invalid rating data');
 
         const label = 'Google reviews';
         const displayedRating = rating.toFixed(1);
@@ -211,15 +339,17 @@ function initializeLocalRating() {
         if (ratingValue) ratingValue.textContent = displayedRating;
         if (ratingCount) ratingCount.textContent = `from ${displayedCount}`;
         if (ratingLabel) ratingLabel.textContent = label;
+        [ratingValue, ratingCount, ratingLabel].forEach(el => { if (el) el.hidden = false; });
         ratingEl.querySelectorAll('.stars i').forEach((star, index) => {
           const fill = Math.max(0, Math.min(1, rating - index)) * 100;
           star.style.setProperty('--star-fill', `${fill}%`);
         });
-        ratingEl.setAttribute('aria-label', `${displayedRating} out of 5 stars from ${displayedCount} ${label}`);
+        if (status) status.hidden = true;
+        if (content) content.hidden = false;
+        ratingEl.setAttribute('aria-busy', 'false');
       })
-      .catch(() => {
-        // Keep the embedded fallback text when the local JSON cannot be loaded.
-      });
+      .catch(showStarsOnly)
+      .finally(() => window.clearTimeout(timeout));
   });
 }
 
@@ -468,30 +598,6 @@ function normalizeQuoteModal() {
 </div>`;
 }
 
-function applySiteInfo() {
-  document.querySelectorAll('.footer').forEach(footer => {
-    const locationTitle = Array.from(footer.querySelectorAll('.footer-title')).find(title => title.textContent.trim() === 'Locations');
-    if (locationTitle) locationTitle.textContent = 'Locations';
-
-    const address = footer.querySelector('address');
-    if (address) {
-      const locations = SITE_INFO.addresses
-        .map((lines, index) => `${index ? '<br/>' : ''}<i class="fa-solid fa-location-dot text-orange me-2"></i>${lines[0]}<br/>
-<span class="ms-4">${lines[1]}</span>`)
-        .join('');
-      address.innerHTML = `${locations}<br/>
-<i class="fa-solid fa-phone text-orange me-2"></i>${SITE_INFO.phone}`;
-    }
-
-    const stateList = footer.querySelector('.state-list');
-    if (stateList) {
-      stateList.innerHTML = SITE_INFO.statesServed
-        .map(state => `<li><i class="fa-solid fa-check-circle text-orange me-2"></i> ${state}</li>`)
-        .join('');
-    }
-  });
-}
-
 function initializePersonalHeroSlider() {
   document.querySelectorAll('.personal-hero-slider').forEach(slider => {
     const slides = Array.from(slider.querySelectorAll('.personal-hero-slide'));
@@ -525,19 +631,19 @@ function initializePersonalHeroSlider() {
 
 function initializeMegaMenuPreviews() {
   const previewMap = {
-    'auto.html': 'images/automobile_hero.png',
-    'bundled-insurance.html': 'images/personal_bundle.png',
+    'auto.html': 'images/automobile_hero.jpg',
+    'bundled-insurance.html': 'images/personal_bundle.jpg',
     'motorcycle.html': 'images/motorcycle.png',
-    'homeowners.html': 'images/personal_home2.png',
+    'homeowners.html': 'images/personal_home2.jpg',
     'rental.html': 'images/rental.png',
     'condo.html': 'images/condo.png',
     'ilivs.html': 'images/sr22.png',
     'commercial-truck.html': 'images/hero-commercial-2.png',
     'commercial-van.html': 'images/commercial_van3.jpg',
-    'specialtytransportation.html': 'images/commercial_specialty.png',
+    'specialtytransportation.html': 'images/commercial_specialty.jpg',
     'surety-bonds.html': 'images/suretybond2.png',
-    'general-liability.html': 'images/generalliability.png',
-    'workers-compensation.html': 'images/commercial_workerscomp.png'
+    'general-liability.html': 'images/generalliability.jpg',
+    'workers-compensation.html': 'images/commercial_workerscomp.jpg'
   };
   const previewPositionMap = {
     'condo.html': 'calc(75% - 45px) center'
