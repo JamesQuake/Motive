@@ -96,7 +96,7 @@ function readMotiveGoogleRating() {
     if (values) return values;
   }
   if (/limited view of Google Maps/i.test(bodyText)) {
-    return { pending: 'Google is hiding review counts in its signed-out limited view. Run scrape-google-reviews.ps1 -SetupBrowser and sign in to Google.' };
+    return { pending: 'Google is hiding review counts in its signed-out limited view.' };
   }
   return { pending: 'Waiting for a valid rating and total review count in the business header.' };
 }

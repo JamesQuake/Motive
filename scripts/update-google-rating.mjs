@@ -53,7 +53,7 @@ export async function saveRatingData(destination, value, updatedAt = new Date())
 }
 
 async function collectRating() {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: process.env.MOTIVE_HEADFUL !== '1' });
   try {
     const page = await browser.newPage({ locale: 'en-US' });
     const response = await page.goto(listingUrl, {

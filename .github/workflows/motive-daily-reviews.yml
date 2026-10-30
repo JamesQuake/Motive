@@ -36,11 +36,16 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Install a virtual display for headed Chromium
+        run: sudo apt-get update && sudo apt-get install --yes xvfb
+
       - name: Test rating validation and failure safety
         run: node --test tests/google-rating.test.mjs
 
       - name: Collect and validate the public Google listing
-        run: node scripts/update-google-rating.mjs
+        run: xvfb-run --auto-servernum node scripts/update-google-rating.mjs
+        env:
+          MOTIVE_HEADFUL: "1"
 
       - name: Pass the verified JSON to the publisher
         if: success()
