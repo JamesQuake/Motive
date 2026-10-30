@@ -21,24 +21,32 @@ must still be updated when a location changes.
 
 ## Daily Google rating refresh
 
-The homepage fetches `data/site-rating.json` with caching disabled. No review count
-is embedded in the page. It shows only five stars while fetching and
-when the request fails or data is invalid or unverified. Valid, verified data
-adds the rating and review count regardless of its timestamp. `lastUpdated`
-records the scrape date; it does not control whether the rating is displayed.
-A manually entered
-count is not treated as a verified scrape.
+The GitHub Actions workflow `.github/workflows/motive-daily-reviews.yml` runs
+daily at 08:30 America/Chicago and supports a manual run. It uses a GitHub-hosted
+Ubuntu runner and Playwright Chromium; no local computer, Google account, API
+key, CAPTCHA bypass, or Google Cloud billing is required.
 
-The existing Windows task, **Motive Insurance - Daily Google Rating**, runs
-`scrape-google-reviews.ps1` daily at 08:00 in the Windows system time zone
-(Central). By default this updates the local website JSON. With `-OutputJson`,
-it also saves JSON to the specified existing folder for Google Drive to sync.
-It does not publish to the website.
-The computer must be on, connected to the internet, and the task's Windows user
-must be logged in. Missed runs start when available; failed runs retry up to
-three times at 15-minute intervals.
+The job reads the public Google Maps listing, verifies the Motive Insurance
+Solutions name and its website or Matteson address, and requires a valid rating
+and positive review count before atomically saving `data/site-rating.json`.
+An extraction or validation failure exits unsuccessfully and leaves that file
+and its successful-sync timestamp unchanged. A successful run commits the JSON
+to `main`, then verifies the public raw GitHub URL and its CORS response.
+Pull-request runs exercise collection and validation with read-only permissions;
+they do not publish or modify repository data. The homepage reads the `main`
+branch.
 
-### Browser operation
+GitHub Pages is not enabled for this repository. The website itself remains
+hosted on cPanel; the workflow publishes just the JSON in the repository and
+does not deploy or replace website files. For the initial website update,
+upload the modified `index.html` and `.htaccess` to cPanel. The homepage then
+reads the public JSON directly from GitHub, and the CSP permits that exact
+origin. Later successful workflow runs need no cPanel upload.
+
+The existing Windows scraper and scheduled-task instructions below are an
+optional local/manual fallback. They are not required for daily updates.
+
+### Optional Windows browser operation
 
 Google returned a limited Maps view without review counts in headless mode.
 The updater now starts ordinary Chrome hidden, reads the public listing, then
@@ -71,7 +79,7 @@ Daily runs use the same dedicated profile in a hidden ordinary browser. If Googl
 the session or presents a verification page, run setup again and handle Google's
 normal sign-in yourself. The updater does not bypass verification challenges.
 
-### Checks and daily upload
+### Optional local checks
 
 The scraper verifies the business name and website or Matteson address, then
 reads the aggregate rating and total count from that business's header. Both
@@ -92,11 +100,10 @@ Get-ScheduledTaskInfo -TaskName 'Motive Insurance - Daily Google Rating'
 Get-Content .\data\site-rating.json
 ```
 
-Upload `data/site-rating.json` after a successful run, or have Make copy the
-synced JSON to the website. No CSV conversion is needed. Deploy the updated
-`index.html` and `app.js` for the stars-only fallback without a timestamp cutoff.
-Never upload the dedicated browser profile. The maintenance scripts are blocked
-by `.htaccess`. No upload automation or API integration is installed.
+The cloud workflow publishes validated data automatically. If you run the
+Windows scraper manually, it only updates the local repository file; it does
+not publish to GitHub or the cPanel website. Never upload the dedicated browser
+profile. The maintenance scripts are blocked by `.htaccess`.
 
 To set a Google Drive destination, use its actual synced local path:
 

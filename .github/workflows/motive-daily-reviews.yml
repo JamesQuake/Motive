@@ -2,6 +2,9 @@ name: Motive - Daily Reviews
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
   schedule:
     - cron: "30 8 * * *"
       timezone: "America/Chicago"
@@ -9,15 +12,112 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: motive-daily-reviews-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
-  test:
+  collect-and-validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     steps:
-      - name: Test GitHub automation
+      - name: Check out the selected branch
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Playwright
+        run: npm install --no-save --no-audit --no-fund playwright@1.58.2
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Test rating validation and failure safety
+        run: node --test tests/google-rating.test.mjs
+
+      - name: Collect and validate the public Google listing
+        run: node scripts/update-google-rating.mjs
+
+      - name: Pass the verified JSON to the publisher
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-google-rating
+          path: data/site-rating.json
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: collect-and-validate
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out the default branch
+        uses: actions/checkout@v4
+
+      - name: Download the validated rating
+        uses: actions/download-artifact@v4
+        with:
+          name: verified-google-rating
+          path: .rating-artifact
+
+      - name: Validate the rating before updating the repository
         run: |
-          echo "Motive daily automation is working"
-          echo "Current time:"
-          date -u
-          echo "Runner: $RUNNER_OS"
+          node --input-type=module -e '
+            import { readFile } from "node:fs/promises";
+            const data = JSON.parse(await readFile(".rating-artifact/site-rating.json", "utf8"));
+            const valid = data && data.verified === true &&
+              data.source === "Google reviews" &&
+              Number.isFinite(data.rating) && data.rating >= 1 && data.rating <= 5 &&
+              Number.isSafeInteger(data.reviewCount) && data.reviewCount > 0 &&
+              typeof data.lastUpdated === "string" &&
+              Number.isFinite(Date.parse(data.lastUpdated));
+            if (!valid) throw new Error("The collected JSON did not pass publication validation.");
+          '
+          cp .rating-artifact/site-rating.json data/site-rating.json
+
+      - name: Commit the verified JSON to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/site-rating.json
+          if git diff --cached --quiet; then
+            echo "The verified rating JSON is already current."
+          else
+            git commit -m "Refresh verified Google rating" \
+              -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+            git push origin "HEAD:refs/heads/${GITHUB_REF_NAME}"
+          fi
+
+      - name: Verify the published public JSON
+        run: |
+          published_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/$(git rev-parse HEAD)/data/site-rating.json"
+          for attempt in $(seq 1 12); do
+            if PUBLISHED_RATING_URL="$published_url" node --input-type=module -e '
+              import { readFile } from "node:fs/promises";
+              const expected = JSON.parse(await readFile("data/site-rating.json", "utf8"));
+              const response = await fetch(process.env.PUBLISHED_RATING_URL, { cache: "no-store" });
+              if (!response.ok) throw new Error(`Public JSON returned HTTP ${response.status}`);
+              if (response.headers.get("access-control-allow-origin") !== "*") {
+                throw new Error("Public JSON is missing its cross-origin access header");
+              }
+              const actual = await response.json();
+              for (const key of ["rating", "reviewCount", "lastUpdated", "verified"]) {
+                if (actual[key] !== expected[key]) throw new Error(`Published JSON differs at ${key}`);
+              }
+              console.log(`Public rating JSON verified: ${actual.rating} from ${actual.reviewCount} reviews.`);
+            '; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 12 ]; then sleep 5; fi
+          done
+          echo "The validated rating was not available at its public URL." >&2
+          exit 1
