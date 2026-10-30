@@ -58,14 +58,14 @@ jobs:
 
   publish:
     needs: collect-and-validate
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: write
 
     steps:
-      - name: Check out the default branch
+      - name: Check out the workflow branch
         uses: actions/checkout@v4
 
       - name: Download the validated rating
@@ -89,7 +89,7 @@ jobs:
           '
           cp .rating-artifact/site-rating.json data/site-rating.json
 
-      - name: Commit the verified JSON to main
+      - name: Commit the verified JSON to the workflow branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -104,7 +104,12 @@ jobs:
 
       - name: Verify the published public JSON
         run: |
-          published_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/data/site-rating.json?verification=${GITHUB_RUN_ID}"
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            published_ref="main"
+          else
+            published_ref="$(git rev-parse HEAD)"
+          fi
+          published_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${published_ref}/data/site-rating.json?verification=${GITHUB_RUN_ID}"
           for attempt in $(seq 1 12); do
             if PUBLISHED_RATING_URL="$published_url" node --input-type=module -e '
               import { readFile } from "node:fs/promises";

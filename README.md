@@ -30,16 +30,17 @@ The job reads the public Google Maps listing, verifies the Motive Insurance
 Solutions name and its website or Matteson address, and requires a valid rating
 and positive review count before atomically saving `data/site-rating.json`.
 An extraction or validation failure exits unsuccessfully and leaves that file
-and its successful-sync timestamp unchanged. A successful run commits the JSON
-to `main`, then verifies the public raw GitHub URL and its CORS response.
-Pull-request runs exercise collection and validation with read-only permissions;
-they do not publish or modify repository data. The homepage reads the `main`
-branch.
+and its successful-sync timestamp unchanged. A successful scheduled or manual
+run commits the JSON to the branch it ran on, then verifies its public raw
+GitHub URL and CORS response. Pull-request runs exercise collection and
+validation with read-only permissions; they do not publish or modify repository
+data. The homepage reads the `main` branch.
 
 GitHub Pages is not enabled for this repository. The website itself remains
 hosted on cPanel; the workflow publishes just the JSON in the repository and
-does not deploy or replace website files. For the initial website update,
-wait until a successful manual run on `main` has verified public JSON
+does not deploy or replace website files. A manual run on a review branch tests
+publication without changing the live `main` JSON. For the initial website
+update, wait until a successful manual run on `main` has verified public JSON
 publication, then:
 
 1. In cPanel File Manager, open the website document root (normally
