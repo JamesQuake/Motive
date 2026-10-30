@@ -1,0 +1,23 @@
+name: Motive - Daily Reviews
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 8 * * *"
+      timezone: "America/Chicago"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Test GitHub automation
+        run: |
+          echo "Motive daily automation is working"
+          echo "Current time:"
+          date -u
+          echo "Runner: $RUNNER_OS"
