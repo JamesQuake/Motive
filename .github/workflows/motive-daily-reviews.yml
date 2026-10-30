@@ -99,7 +99,7 @@ jobs:
 
       - name: Verify the published public JSON
         run: |
-          published_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/$(git rev-parse HEAD)/data/site-rating.json"
+          published_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/data/site-rating.json?verification=${GITHUB_RUN_ID}"
           for attempt in $(seq 1 12); do
             if PUBLISHED_RATING_URL="$published_url" node --input-type=module -e '
               import { readFile } from "node:fs/promises";

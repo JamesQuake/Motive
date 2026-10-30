@@ -39,12 +39,34 @@ branch.
 GitHub Pages is not enabled for this repository. The website itself remains
 hosted on cPanel; the workflow publishes just the JSON in the repository and
 does not deploy or replace website files. For the initial website update,
-upload the modified `index.html` and `.htaccess` to cPanel. The homepage then
-reads the public JSON directly from GitHub, and the CSP permits that exact
-origin. Later successful workflow runs need no cPanel upload.
+wait until a successful manual run on `main` has verified public JSON
+publication, then:
+
+1. In cPanel File Manager, open the website document root (normally
+   `public_html`) and enable **Show Hidden Files**.
+2. Back up the existing `.htaccess`.
+3. Upload and replace only the modified `index.html` and `.htaccess`. The latter
+   preserves the existing redirects and headers while allowing the raw GitHub
+   JSON origin in `connect-src`.
+
+The homepage then reads the public JSON directly from GitHub. Do not upload
+`data/site-rating.json`, the workflow, or the scraper. Later successful workflow
+runs need no cPanel upload.
 
 The existing Windows scraper and scheduled-task instructions below are an
 optional local/manual fallback. They are not required for daily updates.
+
+### Future Google Places API migration
+
+When billing is approved, create a Google Cloud project, enable Places API
+(Place Details), and use a verified Motive place ID. Request only the needed
+business identity, `rating`, `userRatingCount`, website, and address fields.
+Keep the API key in a restricted GitHub Actions secret and call the API from
+the runner, never from homepage JavaScript. Before migration, confirm current
+Google Places attribution, caching, and storage requirements; then retain the
+same identity checks and validated JSON schema while replacing browser
+extraction with the API response. No Google Cloud project or billing is needed
+for the current workflow.
 
 ### Optional Windows browser operation
 
