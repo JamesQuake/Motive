@@ -1,0 +1,88 @@
+/* Local extensions of Motive's shared quote/authority-page components. */
+.tow-truck-page-body .container { max-width: 1320px; padding-inline: 20px; }
+.tow-truck-page { overflow-wrap: break-word; }
+.tow-truck-page .tow-breadcrumb { padding-block: 18px; font-size: .85rem; }
+.tow-truck-page .quote-hero { min-height: 580px; }
+.tow-truck-page .tow-hero-layout { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 48px; }
+.tow-truck-page .quote-hero-copy { min-width: 0; }
+.tow-truck-page .quote-hero h1 { font-size: clamp(2.7rem, 4.4vw, 4.8rem); }
+.tow-truck-page .quote-hero-copy p { max-width: 55ch; }
+.tow-truck-page .quote-button { white-space: normal; text-align: center; background: #b93418; box-shadow: none; }
+.tow-truck-page .quote-button:hover { background: #9e2c14; }
+.tow-truck-page .quote-hero .quote-call { border: 0; padding-inline: 0; text-decoration: underline; }
+.tow-truck-page .tow-hero-support { font-size: 1rem; color: #dce9f5; }
+.tow-truck-page .tow-metadata { font-size: .8rem; color: #dce9f5; margin: 30px 0 0; }
+.tow-truck-page .tow-image-slot { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-height: 360px; margin: 0; padding: 36px; border: 1px dashed #99b4cf; border-radius: 18px; color: #fff; background: #ffffff08; }
+.tow-truck-page .tow-image-slot p { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; line-height: 1.4; font-weight: 700; margin-block: 14px; }
+.tow-truck-page .tow-slot-label { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }
+.tow-truck-page .tow-image-slot figcaption { color: #dce9f5; font-size: .85rem; }
+.tow-truck-page .quote-section { padding-block: 56px; }
+.tow-truck-page .coverage-card { box-shadow: none; border-radius: 18px; padding: 28px; }
+.tow-truck-page .coverage-card p { color: #475569; font-size: 1rem; line-height: 1.7; }
+.tow-truck-page .tow-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding: 0; margin: 32px 0; list-style: none; }
+.tow-truck-page .tow-flow li { position: relative; background: white; border: 1px solid #dce3ea; border-top: 3px solid var(--motive-blue); border-radius: 14px; padding: 28px; }
+.tow-truck-page .tow-flow li:last-child { border-top-color: var(--motive-orange); }
+.tow-truck-page .tow-flow li:not(:last-child)::after { content: '\2192'; position: absolute; right: -31px; top: 45%; color: var(--motive-blue); font-size: 1.5rem; }
+.tow-truck-page .tow-step-number { display: block; color: #a52e16; font-weight: 800; font-size: .85rem; margin-bottom: 20px; }
+.tow-truck-page .tow-flow h3 { font-size: 1.1rem; line-height: 1.45; }
+.tow-truck-page .tow-flow p { font-weight: 650; font-size: 1rem; margin-bottom: 0; }
+.tow-truck-page .tow-takeaway { background: var(--motive-blue); color: white; padding: 28px 32px; border-radius: 18px; border-left: 4px solid var(--motive-orange); }
+.tow-truck-page .tow-takeaway strong { display: block; font-size: 1.3rem; line-height: 1.5; }
+.tow-truck-page .tow-takeaway p { margin: 12px 0 0; }
+.tow-truck-page .quote-table-wrap { max-width: 950px; }
+.tow-truck-page .quote-table-wrap table { table-layout: fixed; }
+.tow-truck-page .quote-table-wrap th, .tow-truck-page .quote-table-wrap td { width: 50%; padding: 16px 24px; overflow-wrap: anywhere; }
+.tow-truck-page .tow-rule { border-left: 4px solid var(--motive-orange); padding: 10px 0 10px 22px; color: var(--motive-blue); font-weight: 750; margin-block: 28px; }
+.tow-truck-page .tow-callout { max-width: 950px; background: var(--soft-blue); border: 1px solid #dce3ea; border-radius: 14px; padding: 28px; }
+.tow-truck-page .tow-callout a { font-size: .9rem; }
+.tow-truck-page .tow-compare-rule { display: flex; flex-wrap: wrap; gap: 12px 36px; color: var(--motive-blue); border-block: 1px solid #c6d8e8; padding-block: 20px; margin: 28px 0 20px; text-transform: uppercase; font-size: .95rem; }
+.tow-truck-page .tow-tags { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 28px 0; }
+.tow-truck-page .tow-tags li { border: 1px solid #dce3ea; border-radius: 12px; background: white; padding: 18px; font-size: .95rem; font-weight: 650; color: var(--motive-blue); }
+.tow-truck-page .tow-review-checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+.tow-truck-page .tow-review-checklist li { font-size: 1rem; }
+.tow-truck-page .motive-accordion .accordion-button { font-size: 1.05rem; }
+.tow-truck-page .motive-accordion .accordion-body p { max-width: none; }
+.tow-truck-page .tow-final { background: var(--motive-blue); color: white; }
+.tow-truck-page .tow-final h2, .tow-truck-page .tow-final .quote-call { color: white; }
+.tow-truck-page .tow-related { padding-block: 32px; }
+.tow-truck-page .tow-related p { max-width: 100ch; }
+.tow-truck-page-body :focus-visible { outline: 3px solid #a52e16; outline-offset: 5px; }
+.tow-truck-page .quote-hero :focus-visible, .tow-truck-page .tow-final :focus-visible { outline-color: white; }
+@media (max-width: 991.98px) {
+  .tow-truck-page .quote-hero { min-height: 0; }
+  .tow-truck-page .tow-hero-layout { grid-template-columns: 1fr; gap: 28px; padding-block: 36px; }
+  .tow-truck-page .tow-image-slot { min-height: 220px; }
+  .tow-truck-page .tow-flow { grid-template-columns: 1fr; gap: 32px; }
+  .tow-truck-page .tow-flow li:not(:last-child)::after { content: '\2193'; top: auto; right: auto; left: 28px; bottom: -33px; }
+  .tow-truck-page .tow-tags, .tow-truck-page .tow-review-checklist { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767.98px) {
+  .tow-truck-page-body .container, .tow-truck-page .container { padding-inline: 12px; }
+  .tow-truck-page .quote-section { padding-block: 36px; }
+  .tow-truck-page .tow-hero-layout { padding-block: 32px; }
+}
+@media (max-width: 575.98px) {
+  .tow-truck-page .quote-hero h1 { font-size: clamp(2.3rem, 10vw, 3.3rem); }
+  .tow-truck-page .tow-image-slot { padding: 24px; min-height: 180px; }
+  .tow-truck-page .tow-review-checklist { grid-template-columns: 1fr; }
+  .tow-truck-page .tow-tags { gap: 10px; }
+  .tow-truck-page .tow-tags li { padding: 14px; }
+  .tow-truck-page .quote-table-wrap th, .tow-truck-page .quote-table-wrap td { padding: 14px 12px; font-size: .95rem; }
+  .tow-truck-page .tow-takeaway, .tow-truck-page .tow-callout { padding: 24px; }
+  .tow-truck-page .tow-compare-rule { flex-direction: column; }
+}
+
+/* Editorial vehicle-transport feature; scoped to this section only. */
+.tow-truck-page .tow-transport-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 4vw, 60px); align-items: center; }
+.tow-truck-page .tow-transport-photo { margin: 0; min-width: 0; aspect-ratio: 6 / 5; overflow: hidden; border-radius: 18px; background: var(--soft-blue); }
+.tow-truck-page .tow-transport-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tow-truck-page .tow-transport-image-slot { display: flex; flex-direction: column; justify-content: center; height: 100%; padding: clamp(28px, 4vw, 52px); border: 1px dashed #8ba8c4; border-radius: inherit; color: var(--motive-blue); }
+.tow-truck-page .tow-transport-image-slot span { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.tow-truck-page .tow-transport-image-slot p { font-family: 'Montserrat', sans-serif; font-size: clamp(1.35rem, 2vw, 1.8rem); font-weight: 700; line-height: 1.4; margin: 18px 0 0; }
+.tow-truck-page .tow-transport-copy { min-width: 0; }
+.tow-truck-page .tow-transport-copy h2 { font-size: clamp(1.8rem, 2.6vw, 2.6rem); }
+.tow-truck-page .tow-transport-copy p:last-child { margin-bottom: 0; }
+@media (max-width: 991.98px) {
+  .tow-truck-page .tow-transport-layout { grid-template-columns: 1fr; gap: 28px; }
+  .tow-truck-page .tow-transport-photo { aspect-ratio: 3 / 2; }
+}
