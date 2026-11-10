@@ -1,6 +1,7 @@
 /* Specialty overview: existing Motive rail, visual language, and real destinations. */
 .transportation-overview-page .detail-hero-image {
-  background-position: right bottom;
+  inset: -50px 0;
+  background-position: right calc(100% + 35px);
   background-repeat: no-repeat;
 }
 
@@ -408,4 +409,108 @@
     min-height: 0;
     font-size: 1.1875rem;
   }
+}
+
+/* Distinct editorial sections, using the existing Motive palette and content. */
+.transportation-overview-page .detail-article > .detail-section {
+  margin-block: 32px;
+  padding-block: 48px;
+}
+.transportation-overview-page .overview-coverage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  column-gap: 56px;
+  padding: 48px;
+  background: #0b1f3a;
+  color: #dbe5f0;
+  border-radius: 16px;
+}
+.transportation-overview-page .overview-coverage h2 { color: #fff; }
+.transportation-overview-page .overview-coverage > p { grid-column: 1; color: #dbe5f0; }
+.transportation-overview-page .overview-coverage-list {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 0 24px;
+  margin: 0;
+}
+.transportation-overview-page .overview-coverage-list li {
+  padding: 15px 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff30;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+}
+.transportation-overview-page .overview-factor-grid { counter-reset: factor; gap: 32px; }
+.transportation-overview-page .overview-factor {
+  counter-increment: factor;
+  padding: 24px 0 0;
+  border-top: 1px solid #cbd7e3;
+}
+.transportation-overview-page .overview-factor::before {
+  content: counter(factor, decimal-leading-zero);
+  display: block;
+  margin-bottom: 18px;
+  color: #b73717;
+  font-size: .875rem;
+  font-weight: 700;
+}
+.transportation-overview-page .overview-contract {
+  padding: 40px 48px;
+  border-left: 4px solid var(--motive-orange);
+  background: #fff5ef;
+}
+.transportation-overview-page .overview-contract-list { gap: 0 28px; }
+.transportation-overview-page .overview-contract-list li {
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid #e8d7cd;
+  border-radius: 0;
+  background: transparent;
+}
+.transportation-overview-page .overview-fleet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 64px;
+}
+.transportation-overview-page .overview-fleet > :not(ul) { grid-column: 1; }
+.transportation-overview-page .overview-fleet-list {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  padding: 12px 28px;
+  border-radius: 16px;
+  background: #f2f5f8;
+}
+.transportation-overview-page .overview-fleet-list li {
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid #dce5ef;
+  border-radius: 0;
+  background: transparent;
+}
+.transportation-overview-page .overview-fleet-list li:last-child { border-bottom: 0; }
+.transportation-overview-page .overview-closing {
+  padding: 48px;
+  border-radius: 16px;
+  background: #edf3f9;
+  text-align: center;
+}
+.transportation-overview-page .overview-closing h2 { margin-inline: auto; }
+@media (max-width: 991.98px) {
+  .transportation-overview-page .overview-coverage,
+  .transportation-overview-page .overview-fleet { display: block; }
+  .transportation-overview-page .overview-coverage-list { margin-top: 28px; }
+  .transportation-overview-page .overview-fleet-list { margin-block: 24px; }
+}
+@media (max-width: 767.98px) {
+  .transportation-overview-page .detail-article > .detail-section { margin-block: 20px; padding-block: 32px; }
+  .transportation-overview-page .overview-coverage,
+  .transportation-overview-page .overview-contract,
+  .transportation-overview-page .overview-closing { padding: 28px 22px; }
+  .transportation-overview-page .overview-coverage-list { grid-template-columns: 1fr; }
 }

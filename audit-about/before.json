@@ -1,0 +1,202 @@
+{
+  "mode": "before",
+  "errors": [],
+  "resourceErrors": [],
+  "views": [
+    {
+      "status": 200,
+      "title": "About Motive Insurance | Personal & Commercial Coverage",
+      "width": 1440,
+      "scroll": 1425,
+      "headings": [
+        {
+          "tag": "H3",
+          "text": "Coverage for every move you make."
+        },
+        {
+          "tag": "H1",
+          "text": "About Us"
+        },
+        {
+          "tag": "H2",
+          "text": "Progress. Our foundation since day one."
+        },
+        {
+          "tag": "H2",
+          "text": "Moving forward and living fully"
+        },
+        {
+          "tag": "H2",
+          "text": "People who risk, learn, and grow"
+        },
+        {
+          "tag": "H2",
+          "text": "Who is your better trusted agent?"
+        },
+        {
+          "tag": "H3",
+          "text": "Need help?"
+        },
+        {
+          "tag": "H3",
+          "text": "Select Insurance"
+        }
+      ],
+      "hero": {
+        "x": 0,
+        "y": 130,
+        "width": 1425,
+        "height": 480,
+        "top": 130,
+        "right": 1425,
+        "bottom": 610,
+        "left": 0
+      },
+      "footerCount": 1,
+      "brokenImages": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:51101/images/logo.png",
+          "width": 1200,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51101/images/logo.png",
+          "width": 1200,
+          "height": 201
+        }
+      ],
+      "bodyText": "PERSONAL\nCOMMERCIAL\nInsurance \nSolutions \nAbout \nInsights & Blogs \nCommercial Quote\nABOUT US\n\nProgress, people, and practical coverage have shaped Motive from day one.\n\nGet Your Quote\nProgress. Our foundation since day one.\n\nMotive Insurance supports customers on the road, in the home, and in business with coverage conversations built around real needs.\n\nMoving forward and living fully\n\nOur team helps customers understand coverage options, identify gaps, and protect the work and property that matter most.\n\nPeople who risk, learn, and grow\n\nMotive people are dedicated to making insurance easier for customers and communities through practical guidance and responsive service.\n\nWho is your better trusted agent?\n\nA trusted agent helps compare options, explain coverage, and support customers when policies, claims, or documents need attention.\n\nNeed help?\nCall 888 943 0888\nEmail support@motivetoday.com\nMatteson office\nStart a Request\nLocations\n4801 Southwick Dr, Suite 270\nMatteson, IL 60443\n333 N Wood Dale Rd # 208\nWood Dale, IL 60191\n888 943 0888\nStates We Serve\n Illinois\n Indiana\n Wisconsin\nConnect With Us\n\n© 2026 MOTIVE INSURANCE LLC | 888 943 0888 | PRIVACY POLICY"
+    },
+    {
+      "status": 200,
+      "title": "About Motive Insurance | Personal & Commercial Coverage",
+      "width": 768,
+      "scroll": 753,
+      "headings": [
+        {
+          "tag": "H3",
+          "text": "Coverage for every move you make."
+        },
+        {
+          "tag": "H1",
+          "text": "About Us"
+        },
+        {
+          "tag": "H2",
+          "text": "Progress. Our foundation since day one."
+        },
+        {
+          "tag": "H2",
+          "text": "Moving forward and living fully"
+        },
+        {
+          "tag": "H2",
+          "text": "People who risk, learn, and grow"
+        },
+        {
+          "tag": "H2",
+          "text": "Who is your better trusted agent?"
+        },
+        {
+          "tag": "H3",
+          "text": "Need help?"
+        },
+        {
+          "tag": "H3",
+          "text": "Select Insurance"
+        }
+      ],
+      "hero": {
+        "x": 0,
+        "y": 110,
+        "width": 753,
+        "height": 360,
+        "top": 110,
+        "right": 753,
+        "bottom": 470,
+        "left": 0
+      },
+      "footerCount": 1,
+      "brokenImages": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:51101/images/logo.png",
+          "width": 1200,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51101/images/logo.png",
+          "width": 1200,
+          "height": 201
+        }
+      ],
+      "bodyText": "PERSONAL\nCOMMERCIAL\nABOUT US\n\nProgress, people, and practical coverage have shaped Motive from day one.\n\nGet Your Quote\nProgress. Our foundation since day one.\n\nMotive Insurance supports customers on the road, in the home, and in business with coverage conversations built around real needs.\n\nMoving forward and living fully\n\nOur team helps customers understand coverage options, identify gaps, and protect the work and property that matter most.\n\nPeople who risk, learn, and grow\n\nMotive people are dedicated to making insurance easier for customers and communities through practical guidance and responsive service.\n\nWho is your better trusted agent?\n\nA trusted agent helps compare options, explain coverage, and support customers when policies, claims, or documents need attention.\n\nNeed help?\nCall 888 943 0888\nEmail support@motivetoday.com\nMatteson office\nStart a Request\nLocations\n4801 Southwick Dr, Suite 270\nMatteson, IL 60443\n333 N Wood Dale Rd # 208\nWood Dale, IL 60191\n888 943 0888\nStates We Serve\n Illinois\n Indiana\n Wisconsin\nConnect With Us\n\n© 2026 MOTIVE INSURANCE LLC | 888 943 0888 | PRIVACY POLICY"
+    },
+    {
+      "status": 200,
+      "title": "About Motive Insurance | Personal & Commercial Coverage",
+      "width": 390,
+      "scroll": 375,
+      "headings": [
+        {
+          "tag": "H3",
+          "text": "Coverage for every move you make."
+        },
+        {
+          "tag": "H1",
+          "text": "About Us"
+        },
+        {
+          "tag": "H2",
+          "text": "Progress. Our foundation since day one."
+        },
+        {
+          "tag": "H2",
+          "text": "Moving forward and living fully"
+        },
+        {
+          "tag": "H2",
+          "text": "People who risk, learn, and grow"
+        },
+        {
+          "tag": "H2",
+          "text": "Who is your better trusted agent?"
+        },
+        {
+          "tag": "H3",
+          "text": "Need help?"
+        },
+        {
+          "tag": "H3",
+          "text": "Select Insurance"
+        }
+      ],
+      "hero": {
+        "x": 0,
+        "y": 110,
+        "width": 375,
+        "height": 400,
+        "top": 110,
+        "right": 375,
+        "bottom": 510,
+        "left": 0
+      },
+      "footerCount": 1,
+      "brokenImages": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:51101/images/logo.png",
+          "width": 1200,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51101/images/logo.png",
+          "width": 1200,
+          "height": 201
+        }
+      ],
+      "bodyText": "PERSONAL\nCOMMERCIAL\nABOUT US\n\nProgress, people, and practical coverage have shaped Motive from day one.\n\nGet Your Quote\nProgress. Our foundation since day one.\n\nMotive Insurance supports customers on the road, in the home, and in business with coverage conversations built around real needs.\n\nMoving forward and living fully\n\nOur team helps customers understand coverage options, identify gaps, and protect the work and property that matter most.\n\nPeople who risk, learn, and grow\n\nMotive people are dedicated to making insurance easier for customers and communities through practical guidance and responsive service.\n\nWho is your better trusted agent?\n\nA trusted agent helps compare options, explain coverage, and support customers when policies, claims, or documents need attention.\n\nNeed help?\nCall 888 943 0888\nEmail support@motivetoday.com\nMatteson office\nStart a Request\nLocations\n4801 Southwick Dr, Suite 270\nMatteson, IL 60443\n333 N Wood Dale Rd # 208\nWood Dale, IL 60191\n888 943 0888\nStates We Serve\n Illinois\n Indiana\n Wisconsin\nConnect With Us\n\n© 2026 MOTIVE INSURANCE LLC | 888 943 0888 | PRIVACY POLICY"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+/* About-page content only. Shared navigation, hero, footer and modals stay global. */
+.about-editorial { color: #475569; }
+.about-editorial .about-section { padding: clamp(56px, 6vw, 88px) 0; }
+.about-editorial .about-split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(32px, 5vw, 80px); }
+.about-editorial .about-eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; color: var(--motive-blue); font-size: .75rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.about-editorial .about-eyebrow::before { content: ''; width: 28px; height: 3px; background: var(--motive-orange); flex: 0 0 auto; }
+.about-editorial h2 { margin: 0 0 24px; color: var(--motive-blue); font-size: clamp(1.85rem, 2.7vw, 2.6rem); line-height: 1.14; letter-spacing: -.035em; text-wrap: balance; }
+.about-editorial h3 { color: var(--motive-blue); font-size: 1.1rem; line-height: 1.35; margin: 0 0 12px; }
+.about-editorial p { line-height: 1.75; margin: 0 0 18px; }
+.about-editorial .about-copy { max-width: 560px; }
+.about-editorial .about-photo { margin: 0; min-width: 0; }
+.about-editorial .about-photo img { display: block; width: 100%; height: auto; aspect-ratio: 6 / 5; object-fit: cover; border-radius: 10px; }
+.about-editorial figcaption { margin-top: 14px; padding-left: 14px; border-left: 2px solid var(--motive-orange); font-size: .82rem; line-height: 1.5; }
+.about-editorial .about-links { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 26px; }
+.about-editorial .about-text-link { color: var(--motive-blue); font-weight: 750; font-size: .93rem; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--motive-orange); }
+.about-editorial .about-text-link:hover { text-decoration-thickness: 2px; }
+.about-editorial a:focus-visible { outline: 3px solid var(--motive-orange); outline-offset: 5px; }
+.about-editorial .about-process { background: var(--motive-blue); color: #e2e8f0; }
+.about-editorial .about-process h2, .about-editorial .about-process h3, .about-editorial .about-process .about-eyebrow { color: #fff; }
+.about-editorial .about-section-heading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: end; margin-bottom: 40px; }
+.about-editorial .about-section-heading h2, .about-editorial .about-section-heading p:last-child { margin-bottom: 0; }
+.about-editorial .about-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.about-editorial .about-steps li { border-top: 1px solid #ffffff45; padding: 28px 24px 0; border-left: 1px solid #ffffff30; }
+.about-editorial .about-steps li:first-child { border-left: 0; padding-left: 0; }
+.about-editorial .about-steps li:last-child { padding-right: 0; }
+.about-editorial .about-step-number { display: block; color: #ffb29f; font-size: .85rem; font-weight: 750; letter-spacing: .12em; margin-bottom: 26px; }
+.about-editorial .about-steps h3 { font-size: 1.25rem; }
+.about-editorial .about-steps p { font-size: .92rem; margin-bottom: 0; }
+.about-editorial .about-principles { padding: 0; margin: 24px 0; list-style: none; }
+.about-editorial .about-principles li { padding: 18px 0; border-top: 1px solid #dce3eb; }
+.about-editorial .about-principles li:last-child { border-bottom: 1px solid #dce3eb; }
+.about-editorial .about-principles h3 { margin-bottom: 6px; }
+.about-editorial .about-principles p { margin-bottom: 0; font-size: .94rem; }
+.about-editorial .about-independent .about-photo img { aspect-ratio: 5 / 6; object-position: 60% center; }
+.about-editorial .about-people { background: #f3f6f9; }
+.about-editorial .about-people-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; align-items: start; }
+.about-editorial .about-people-grid .about-photo img { aspect-ratio: 4 / 3; }
+.about-editorial .about-people-grid .about-photo:last-child { margin-top: 48px; }
+.about-editorial .about-people-grid .about-photo:last-child img { aspect-ratio: 16 / 9; }
+.about-editorial .about-closing { padding-bottom: clamp(56px, 6vw, 88px); }
+.about-editorial .about-closing-panel { display: grid; grid-template-columns: 1fr 1fr; background: var(--motive-dark); border-radius: 10px; overflow: hidden; }
+.about-editorial .about-closing-panel > picture { display: block; min-width: 0; }
+.about-editorial .about-closing-copy { padding: clamp(28px, 4vw, 56px); align-self: center; color: #e2e8f0; }
+.about-editorial .about-closing-copy h2, .about-editorial .about-closing-copy .about-eyebrow { color: #fff; }
+.about-editorial .about-closing-photo { display: block; width: 100%; height: 100%; min-height: 380px; object-fit: cover; object-position: right center; }
+.about-editorial .about-closing-copy .btn { margin-top: 8px; }
+@media (max-width: 991.98px) {
+  .about-editorial .about-split { gap: 32px; }
+  .about-editorial .about-section-heading { gap: 28px; }
+  .about-editorial .about-steps { grid-template-columns: repeat(2, 1fr); gap: 32px 0; }
+  .about-editorial .about-steps li:nth-child(3) { border-left: 0; padding-left: 0; }
+  .about-editorial .about-steps li:nth-child(2) { padding-right: 0; }
+}
+@media (max-width: 767.98px) {
+  .about-editorial .about-split, .about-editorial .about-section-heading, .about-editorial .about-people-grid, .about-editorial .about-closing-panel { grid-template-columns: 1fr; }
+  .about-editorial .about-section-heading { gap: 6px; margin-bottom: 28px; }
+  .about-editorial .about-section-heading h2 { margin-bottom: 16px; }
+  .about-editorial .about-independent .about-photo { order: 2; }
+  .about-editorial .about-independent .about-photo img { aspect-ratio: 4 / 3; }
+  .about-editorial .about-people-grid .about-photo:last-child { margin-top: 0; }
+  .about-editorial .about-people-grid .about-photo img { aspect-ratio: 4 / 3; }
+  .about-editorial .about-steps { grid-template-columns: 1fr; gap: 0; }
+  .about-editorial .about-steps li { display: grid; grid-template-columns: 34px 1fr; column-gap: 20px; padding: 24px 0; border-left: 0; }
+  .about-editorial .about-step-number { grid-row: span 2; padding-top: 3px; margin-bottom: 0; }
+  .about-editorial .about-steps li:last-child { padding-bottom: 0; }
+  .about-editorial .about-closing-photo { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+}

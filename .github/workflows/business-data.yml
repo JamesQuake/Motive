@@ -12,5 +12,6 @@ jobs:
           node-version: 22
       - run: node scripts/sync-business-data.mjs --check
       - run: node scripts/sync-discovery.mjs --check
+      - run: node scripts/sync-testimonials.mjs --check
       - run: node --test tests/business-data.test.mjs
       - run: node --test tests/discovery.test.mjs

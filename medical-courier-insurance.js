@@ -47,33 +47,4 @@
     img.addEventListener('error', fallback);
     if (img.complete && img.naturalWidth === 0) fallback();
   });
-  const form = document.getElementById('mc-review-form');
-  const status = document.getElementById('mc-form-status');
-  form.querySelector('button[type="submit"]').disabled = false;
-  let started = false;
-  form.addEventListener('input', event => {
-    if (!started) { track('medical_courier_form_start'); started = true; }
-    if (event.target.matches('input, select, textarea')) event.target.removeAttribute('aria-invalid');
-    status.textContent = '';
-  });
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    form.querySelectorAll('input[type="text"], textarea').forEach(field => {
-      field.setCustomValidity(field.required && !field.value.trim() ? 'Please complete this field.' : '');
-    });
-    if (!form.checkValidity()) {
-      form.querySelectorAll(':invalid').forEach(field => field.setAttribute('aria-invalid', 'true'));
-      form.reportValidity();
-      return;
-    }
-    // TODO: Connect the Momentum AMP form/webhook here. Submit only after validation,
-    // and show success only after the service confirms acceptance.
-    // On confirmed acceptance only: track('generate_lead', {lead_type: 'medical_courier'});
-    // Do not fire generate_lead for this local validation preview.
-    status.textContent = 'Your information is ready for review, but has not been sent. Online requests are not connected yet. Call Motive at 888-943-0888 to request your Contract-Ready Coverage Review.';
-    status.focus();
-  });
-  form.addEventListener('input', event => {
-    if (typeof event.target.setCustomValidity === 'function') event.target.setCustomValidity('');
-  });
 })();

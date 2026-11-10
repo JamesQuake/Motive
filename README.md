@@ -13,8 +13,10 @@ After changing the JSON or published content, run:
 ```sh
 node scripts/sync-business-data.mjs
 node scripts/sync-discovery.mjs
+node scripts/sync-testimonials.mjs
 node scripts/sync-business-data.mjs --check
 node scripts/sync-discovery.mjs --check
+node scripts/sync-testimonials.mjs --check
 node --test tests/business-data.test.mjs tests/discovery.test.mjs
 ```
 
@@ -34,6 +36,30 @@ scripts. CI validates generated data but does not deploy the website.
 If footer JSON cannot load, Contact and Privacy links remain usable. JavaScript
 is required for the full footer, but contact and SEO output is static. Preview
 through an HTTP server, not by double-clicking HTML files.
+
+## Testimonials
+
+`data/testimonials.json` contains the owner's supplied Google Business Profile
+review snapshot, not a live Google API feed. Preserve names, original comments,
+ratings, relative date labels and the capture date. Do not complete truncated
+reviews or invent photos, profile links, or exact publication dates. Current
+cards use the original avatars and contributor profile links from the owner's
+Google Doc, cross-checked with the supplied PDF. Local avatar files live in
+`images/reviewers/`; initials are the fallback if an image fails to load.
+
+Run `node scripts/sync-testimonials.mjs` after changing those records. It builds
+12 crawlable HTML cards and uses the existing business-data generator for the
+Matteson address. Never hand-edit generated review cards or address values.
+The carousel only enhances this static content; no API key or browser-side
+review request is required. Do not add self-serving Review/AggregateRating
+schema. A future live provider requires a separate authorized connection and
+review of its attribution and storage terms; the aggregate rating updater below
+does not refresh individual testimonials.
+
+Upload `testimonials.html`, `testimonials.css`, `testimonials.js`, and
+`images/reviewers/` together
+when deployment is authorized. The review source JSON and generator can stay
+in the repository; the page does not fetch them in visitors' browsers.
 
 ## Daily Google rating refresh
 

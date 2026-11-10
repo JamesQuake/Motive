@@ -1,0 +1,371 @@
+{
+  "mode": "after",
+  "errors": [],
+  "resourceErrors": [],
+  "views": [
+    {
+      "status": 200,
+      "title": "About Motive Insurance | Personal & Commercial Coverage",
+      "width": 1440,
+      "scroll": 1425,
+      "headings": [
+        {
+          "tag": "H3",
+          "text": "Coverage for every move you make."
+        },
+        {
+          "tag": "H1",
+          "text": "About Us"
+        },
+        {
+          "tag": "H2",
+          "text": "Coverage for real life and business."
+        },
+        {
+          "tag": "H2",
+          "text": "A clear path to your next decision."
+        },
+        {
+          "tag": "H3",
+          "text": "Understand"
+        },
+        {
+          "tag": "H3",
+          "text": "Compare"
+        },
+        {
+          "tag": "H3",
+          "text": "Protect"
+        },
+        {
+          "tag": "H3",
+          "text": "Support"
+        },
+        {
+          "tag": "H2",
+          "text": "Why choose an independent insurance agency?"
+        },
+        {
+          "tag": "H3",
+          "text": "Look beyond the premium."
+        },
+        {
+          "tag": "H3",
+          "text": "Make the review practical."
+        },
+        {
+          "tag": "H3",
+          "text": "Connect personal and business needs."
+        },
+        {
+          "tag": "H2",
+          "text": "Your priorities shape the conversation."
+        },
+        {
+          "tag": "H2",
+          "text": "Coverage that moves with you."
+        },
+        {
+          "tag": "H3",
+          "text": "Select Insurance"
+        }
+      ],
+      "hero": {
+        "x": 0,
+        "y": 130,
+        "width": 1425,
+        "height": 480,
+        "top": 130,
+        "right": 1425,
+        "bottom": 610,
+        "left": 0
+      },
+      "footerCount": 1,
+      "brokenImages": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:51432/images/logo.png",
+          "width": 1200,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/moving-640.webp",
+          "width": 599,
+          "height": 400
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/business-640.webp",
+          "width": 599,
+          "height": 337
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/professional-640.webp",
+          "width": 599,
+          "height": 400
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/transportation-640.webp",
+          "width": 599,
+          "height": 337
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/home-640.webp",
+          "width": 599,
+          "height": 224
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/logo.png",
+          "width": 1200,
+          "height": 201
+        }
+      ],
+      "bodyText": "PERSONAL\nCOMMERCIAL\nInsurance \nSolutions \nAbout \nInsights & Blogs \nCommercial Quote\nABOUT US\n\nProgress, people, and practical coverage have shaped Motive from day one.\n\nGet Your Quote\n\nPERSONAL LIVES. WORKING LIVES.\n\nCoverage for real life and business.\n\nA home, a vehicle, a business you have built. Each comes with different responsibilities, and each deserves a coverage conversation that starts with you.\n\nMotive helps individuals and businesses understand insurance options for everyday life and the work ahead. From auto and homeowners coverage to trucking, commercial fleets, and business insurance, we help you ask the right questions before choosing a policy.\n\nExplore personal insurance →\nExplore business insurance →\nBehind every move is a home, a livelihood, and something worth protecting.\n\nHOW MOTIVE WORKS\n\nA clear path to your next decision.\n\nInsurance is easier to consider when you understand what you need, what your options mean, and where to turn with questions.\n\n01\nUnderstand\n\nStart with your household or operation, your current coverage, and what is changing.\n\n02\nCompare\n\nReview eligible options, including limits, deductibles, exclusions, and the differences that matter to you.\n\n03\nProtect\n\nChoose appropriate coverage and confirm the policy details and effective dates before relying on it.\n\n04\nSupport\n\nReturn with policy questions, document requests, or changes to your home, vehicles, or business.\n\nPractical questions first. A more informed coverage decision next.\n\nINDEPENDENT GUIDANCE\n\nWhy choose an independent insurance agency?\n\nAn independent agency can help you compare eligible insurance options and understand how they fit your circumstances. At Motive, that conversation connects the policy details to your daily life or business.\n\nLook beyond the premium.\n\nCompare what a policy covers, its limits, and where exclusions or deductibles could affect you.\n\nMake the review practical.\n\nBring your current policy and any contract requirements so we can discuss the questions specific to your situation.\n\nConnect personal and business needs.\n\nTalk through changes at home and at work, from a new vehicle to another truck or a growing fleet.\n\nTalk through your coverage →\n\nPEOPLE BEHIND THE POLICIES\n\nYour priorities shape the conversation.\n\nTrust starts with clear explanations and room for your questions. Whether you are looking after your family, running a business, or working on the road, we help you consider coverage in the context of what you do.\n\nFor the people building a business and planning what comes next.\nFor the people whose work keeps goods and businesses moving. Explore trucking coverage.\n\nYOUR NEXT CHAPTER\n\nCoverage that moves with you.\n\nA new home. A different vehicle. Another truck in the fleet. When your circumstances change, make space for a fresh look at your insurance.\n\nTell Motive what is next, and start a conversation about your personal or commercial coverage.\n\nGet Your Quote →\nLocations\n4801 Southwick Dr, Suite 270\nMatteson, IL 60443\n333 N Wood Dale Rd # 208\nWood Dale, IL 60191\n888 943 0888\nStates We Serve\n Illinois\n Indiana\n Wisconsin\nConnect With Us\n\n© 2026 MOTIVE INSURANCE LLC | 888 943 0888 | PRIVACY POLICY"
+    },
+    {
+      "status": 200,
+      "title": "About Motive Insurance | Personal & Commercial Coverage",
+      "width": 768,
+      "scroll": 753,
+      "headings": [
+        {
+          "tag": "H3",
+          "text": "Coverage for every move you make."
+        },
+        {
+          "tag": "H1",
+          "text": "About Us"
+        },
+        {
+          "tag": "H2",
+          "text": "Coverage for real life and business."
+        },
+        {
+          "tag": "H2",
+          "text": "A clear path to your next decision."
+        },
+        {
+          "tag": "H3",
+          "text": "Understand"
+        },
+        {
+          "tag": "H3",
+          "text": "Compare"
+        },
+        {
+          "tag": "H3",
+          "text": "Protect"
+        },
+        {
+          "tag": "H3",
+          "text": "Support"
+        },
+        {
+          "tag": "H2",
+          "text": "Why choose an independent insurance agency?"
+        },
+        {
+          "tag": "H3",
+          "text": "Look beyond the premium."
+        },
+        {
+          "tag": "H3",
+          "text": "Make the review practical."
+        },
+        {
+          "tag": "H3",
+          "text": "Connect personal and business needs."
+        },
+        {
+          "tag": "H2",
+          "text": "Your priorities shape the conversation."
+        },
+        {
+          "tag": "H2",
+          "text": "Coverage that moves with you."
+        },
+        {
+          "tag": "H3",
+          "text": "Select Insurance"
+        }
+      ],
+      "hero": {
+        "x": 0,
+        "y": 110,
+        "width": 753,
+        "height": 360,
+        "top": 110,
+        "right": 753,
+        "bottom": 470,
+        "left": 0
+      },
+      "footerCount": 1,
+      "brokenImages": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:51432/images/logo.png",
+          "width": 1200,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/moving-640.webp",
+          "width": 353,
+          "height": 235
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/business-640.webp",
+          "width": 353,
+          "height": 198
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/professional-640.webp",
+          "width": 353,
+          "height": 235
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/transportation-640.webp",
+          "width": 353,
+          "height": 198
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/home-640.webp",
+          "width": 353,
+          "height": 132
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/logo.png",
+          "width": 1200,
+          "height": 201
+        }
+      ],
+      "bodyText": "PERSONAL\nCOMMERCIAL\nABOUT US\n\nProgress, people, and practical coverage have shaped Motive from day one.\n\nGet Your Quote\n\nPERSONAL LIVES. WORKING LIVES.\n\nCoverage for real life and business.\n\nA home, a vehicle, a business you have built. Each comes with different responsibilities, and each deserves a coverage conversation that starts with you.\n\nMotive helps individuals and businesses understand insurance options for everyday life and the work ahead. From auto and homeowners coverage to trucking, commercial fleets, and business insurance, we help you ask the right questions before choosing a policy.\n\nExplore personal insurance →\nExplore business insurance →\nBehind every move is a home, a livelihood, and something worth protecting.\n\nHOW MOTIVE WORKS\n\nA clear path to your next decision.\n\nInsurance is easier to consider when you understand what you need, what your options mean, and where to turn with questions.\n\n01\nUnderstand\n\nStart with your household or operation, your current coverage, and what is changing.\n\n02\nCompare\n\nReview eligible options, including limits, deductibles, exclusions, and the differences that matter to you.\n\n03\nProtect\n\nChoose appropriate coverage and confirm the policy details and effective dates before relying on it.\n\n04\nSupport\n\nReturn with policy questions, document requests, or changes to your home, vehicles, or business.\n\nPractical questions first. A more informed coverage decision next.\n\nINDEPENDENT GUIDANCE\n\nWhy choose an independent insurance agency?\n\nAn independent agency can help you compare eligible insurance options and understand how they fit your circumstances. At Motive, that conversation connects the policy details to your daily life or business.\n\nLook beyond the premium.\n\nCompare what a policy covers, its limits, and where exclusions or deductibles could affect you.\n\nMake the review practical.\n\nBring your current policy and any contract requirements so we can discuss the questions specific to your situation.\n\nConnect personal and business needs.\n\nTalk through changes at home and at work, from a new vehicle to another truck or a growing fleet.\n\nTalk through your coverage →\n\nPEOPLE BEHIND THE POLICIES\n\nYour priorities shape the conversation.\n\nTrust starts with clear explanations and room for your questions. Whether you are looking after your family, running a business, or working on the road, we help you consider coverage in the context of what you do.\n\nFor the people building a business and planning what comes next.\nFor the people whose work keeps goods and businesses moving. Explore trucking coverage.\n\nYOUR NEXT CHAPTER\n\nCoverage that moves with you.\n\nA new home. A different vehicle. Another truck in the fleet. When your circumstances change, make space for a fresh look at your insurance.\n\nTell Motive what is next, and start a conversation about your personal or commercial coverage.\n\nGet Your Quote →\nLocations\n4801 Southwick Dr, Suite 270\nMatteson, IL 60443\n333 N Wood Dale Rd # 208\nWood Dale, IL 60191\n888 943 0888\nStates We Serve\n Illinois\n Indiana\n Wisconsin\nConnect With Us\n\n© 2026 MOTIVE INSURANCE LLC | 888 943 0888 | PRIVACY POLICY"
+    },
+    {
+      "status": 200,
+      "title": "About Motive Insurance | Personal & Commercial Coverage",
+      "width": 390,
+      "scroll": 375,
+      "headings": [
+        {
+          "tag": "H3",
+          "text": "Coverage for every move you make."
+        },
+        {
+          "tag": "H1",
+          "text": "About Us"
+        },
+        {
+          "tag": "H2",
+          "text": "Coverage for real life and business."
+        },
+        {
+          "tag": "H2",
+          "text": "A clear path to your next decision."
+        },
+        {
+          "tag": "H3",
+          "text": "Understand"
+        },
+        {
+          "tag": "H3",
+          "text": "Compare"
+        },
+        {
+          "tag": "H3",
+          "text": "Protect"
+        },
+        {
+          "tag": "H3",
+          "text": "Support"
+        },
+        {
+          "tag": "H2",
+          "text": "Why choose an independent insurance agency?"
+        },
+        {
+          "tag": "H3",
+          "text": "Look beyond the premium."
+        },
+        {
+          "tag": "H3",
+          "text": "Make the review practical."
+        },
+        {
+          "tag": "H3",
+          "text": "Connect personal and business needs."
+        },
+        {
+          "tag": "H2",
+          "text": "Your priorities shape the conversation."
+        },
+        {
+          "tag": "H2",
+          "text": "Coverage that moves with you."
+        },
+        {
+          "tag": "H3",
+          "text": "Select Insurance"
+        }
+      ],
+      "hero": {
+        "x": 0,
+        "y": 110,
+        "width": 375,
+        "height": 400,
+        "top": 110,
+        "right": 375,
+        "bottom": 510,
+        "left": 0
+      },
+      "footerCount": 1,
+      "brokenImages": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:51432/images/logo.png",
+          "width": 1200,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/moving-640.webp",
+          "width": 358,
+          "height": 238
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/business-640.webp",
+          "width": 358,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/professional-640.webp",
+          "width": 358,
+          "height": 238
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/transportation-640.webp",
+          "width": 358,
+          "height": 201
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/about/home-640.webp",
+          "width": 358,
+          "height": 134
+        },
+        {
+          "src": "http://127.0.0.1:51432/images/logo.png",
+          "width": 1200,
+          "height": 201
+        }
+      ],
+      "bodyText": "PERSONAL\nCOMMERCIAL\nABOUT US\n\nProgress, people, and practical coverage have shaped Motive from day one.\n\nGet Your Quote\n\nPERSONAL LIVES. WORKING LIVES.\n\nCoverage for real life and business.\n\nA home, a vehicle, a business you have built. Each comes with different responsibilities, and each deserves a coverage conversation that starts with you.\n\nMotive helps individuals and businesses understand insurance options for everyday life and the work ahead. From auto and homeowners coverage to trucking, commercial fleets, and business insurance, we help you ask the right questions before choosing a policy.\n\nExplore personal insurance →\nExplore business insurance →\nBehind every move is a home, a livelihood, and something worth protecting.\n\nHOW MOTIVE WORKS\n\nA clear path to your next decision.\n\nInsurance is easier to consider when you understand what you need, what your options mean, and where to turn with questions.\n\n01\nUnderstand\n\nStart with your household or operation, your current coverage, and what is changing.\n\n02\nCompare\n\nReview eligible options, including limits, deductibles, exclusions, and the differences that matter to you.\n\n03\nProtect\n\nChoose appropriate coverage and confirm the policy details and effective dates before relying on it.\n\n04\nSupport\n\nReturn with policy questions, document requests, or changes to your home, vehicles, or business.\n\nPractical questions first. A more informed coverage decision next.\n\nINDEPENDENT GUIDANCE\n\nWhy choose an independent insurance agency?\n\nAn independent agency can help you compare eligible insurance options and understand how they fit your circumstances. At Motive, that conversation connects the policy details to your daily life or business.\n\nLook beyond the premium.\n\nCompare what a policy covers, its limits, and where exclusions or deductibles could affect you.\n\nMake the review practical.\n\nBring your current policy and any contract requirements so we can discuss the questions specific to your situation.\n\nConnect personal and business needs.\n\nTalk through changes at home and at work, from a new vehicle to another truck or a growing fleet.\n\nTalk through your coverage →\n\nPEOPLE BEHIND THE POLICIES\n\nYour priorities shape the conversation.\n\nTrust starts with clear explanations and room for your questions. Whether you are looking after your family, running a business, or working on the road, we help you consider coverage in the context of what you do.\n\nFor the people building a business and planning what comes next.\nFor the people whose work keeps goods and businesses moving. Explore trucking coverage.\n\nYOUR NEXT CHAPTER\n\nCoverage that moves with you.\n\nA new home. A different vehicle. Another truck in the fleet. When your circumstances change, make space for a fresh look at your insurance.\n\nTell Motive what is next, and start a conversation about your personal or commercial coverage.\n\nGet Your Quote →\nLocations\n4801 Southwick Dr, Suite 270\nMatteson, IL 60443\n333 N Wood Dale Rd # 208\nWood Dale, IL 60191\n888 943 0888\nStates We Serve\n Illinois\n Indiana\n Wisconsin\nConnect With Us\n\n© 2026 MOTIVE INSURANCE LLC | 888 943 0888 | PRIVACY POLICY"
+    }
+  ],
+  "quoteModal": "PASS: correct existing survey, open and close; vendor iframe stubbed, no submissions",
+  "links": [
+    "personal.html",
+    "commercial.html",
+    "contact-us.html#contactForm",
+    "commercial-truck.html",
+    "contact-us.html#contactForm"
+  ],
+  "preserved": "PASS: hero, nav, footer, modal and scripts byte-identical",
+  "nojsSections": 5
+}

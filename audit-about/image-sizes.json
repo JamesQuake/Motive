@@ -1,0 +1,68 @@
+[
+  {
+    "source": "household-goods-moving.jpg",
+    "originalBytes": 302859,
+    "variants": [
+      {
+        "width": 640,
+        "bytes": 52332
+      },
+      {
+        "width": 1200,
+        "bytes": 139398
+      }
+    ]
+  },
+  {
+    "source": "box-truck-quote-closing.jpg",
+    "originalBytes": 150769,
+    "variants": [
+      {
+        "width": 640,
+        "bytes": 25642
+      },
+      {
+        "width": 1200,
+        "bytes": 59190
+      }
+    ]
+  },
+  {
+    "source": "pexels-divinetechygirl-1181690.jpg",
+    "originalBytes": 27389,
+    "variants": [
+      {
+        "width": 640,
+        "bytes": 17992
+      }
+    ]
+  },
+  {
+    "source": "box-truck-quote-preparation.jpg",
+    "originalBytes": 170915,
+    "variants": [
+      {
+        "width": 640,
+        "bytes": 30326
+      },
+      {
+        "width": 1200,
+        "bytes": 70614
+      }
+    ]
+  },
+  {
+    "source": "personal_bundle.jpg",
+    "originalBytes": 158195,
+    "variants": [
+      {
+        "width": 640,
+        "bytes": 20436
+      },
+      {
+        "width": 1200,
+        "bytes": 63862
+      }
+    ]
+  }
+]
