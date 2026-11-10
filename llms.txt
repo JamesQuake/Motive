@@ -1,0 +1,55 @@
+# MOTIVE INSURANCE LLC
+
+> Canonical public insurance information, topic hubs, and service contacts.
+
+This directory links to existing HTML pages. Coverage depends on policy terms and individual circumstances. Use the linked pages for context; this file does not replace sitemap.xml, robots.txt, or structured data.
+
+## Start here
+
+- [MOTIVE | All Your Insurance One Platform](https://motivetoday.com/)
+- [Commercial Business & Transportation Insurance](https://motivetoday.com/commercial.html)
+- [Contact Motive Insurance | Illinois Insurance Agency](https://motivetoday.com/contact-us.html)
+- [Personal Auto, Home & Renters Insurance](https://motivetoday.com/personal.html)
+- [Specialty Transportation Insurance Guides](https://motivetoday.com/specialtytransportation.html)
+
+## Guides and articles
+
+- [Amazon Relay Insurance Requirements](https://motivetoday.com/amazon-relay-requirements.html)
+- [BMC-84 Bond vs BMC-85 Trust](https://motivetoday.com/bmc-84-vs-bmc-85.html)
+- [Bobtail vs Non-Trucking Liability Insurance](https://motivetoday.com/bobtail-vs-non-trucking-liability.html)
+- [How to Find Box Truck Loads in Illinois](https://motivetoday.com/box-truck-loads-illinois.html)
+- [How to Start a Box Truck Business in Illinois (2026 Guide)](https://motivetoday.com/how-to-start-a-box-truck-business-illinois.html)
+- [Box Truck Operating Costs: A Matteson Owner’s Guide](https://motivetoday.com/box-truck-operating-costs-matteson.html)
+- [Black Car & Limousine Insurance Guide](https://motivetoday.com/black-car.html)
+- [Car Hauling Insurance Guide: Cargo, Loads & Risks](https://motivetoday.com/car-hauling.html)
+- [NEMT Insurance Guide: Coverage, Contracts & Risks](https://motivetoday.com/nemt.html)
+- [Shuttle Insurance Guide: Passengers, Routes & Coverage](https://motivetoday.com/shuttle.html)
+- [Specialty Transportation Insurance Guide | NEMT, Shuttle, Towing & Vehicle Transport](https://motivetoday.com/specialty-transportation-insurance-guide.html)
+- [Tow Truck Insurance Guide: On-Hook & Garagekeepers](https://motivetoday.com/towing.html)
+
+## Coverage and company information
+
+- [About Motive Insurance | Personal & Commercial Coverage](https://motivetoday.com/about-us.html)
+- [Bundled Insurance | Auto, Home & Renters Bundles](https://motivetoday.com/bundled-insurance.html)
+- [Auto Insurance Coverage](https://motivetoday.com/auto.html)
+- [Insurance Careers](https://motivetoday.com/careers.html)
+- [Request an Insurance Policy Change](https://motivetoday.com/changes-to-policy.html)
+- [Commercial Truck Insurance for Fleets & Owner-Operators](https://motivetoday.com/commercial-truck.html)
+- [Commercial Van Insurance for Delivery & Service Vehicles](https://motivetoday.com/commercial-van.html)
+- [Condo Insurance Coverage](https://motivetoday.com/condo.html)
+- [File an Insurance Claim](https://motivetoday.com/file-a-claim.html)
+- [General Liability Insurance for Small Businesses](https://motivetoday.com/general-liability.html)
+- [Homeowners Insurance Coverage](https://motivetoday.com/homeowners.html)
+- [ILIVS Verification](https://motivetoday.com/ilivs.html)
+- [Motorcycle Insurance Coverage](https://motivetoday.com/motorcycle.html)
+- [Privacy Policy](https://motivetoday.com/privacy.html)
+- [Refer a Friend to Motive Insurance](https://motivetoday.com/refer-a-friend.html)
+- [Renters Insurance Coverage](https://motivetoday.com/rental.html)
+- [BMC-84 Surety Bond & BMC-85 Trust Guidance](https://motivetoday.com/surety-bonds.html)
+- [Customer Testimonials](https://motivetoday.com/testimonials.html)
+- [Workers’ Compensation Insurance for Businesses](https://motivetoday.com/workers-compensation.html)
+- [Medical Courier Insurance | Commercial Auto, Cargo & Liability](https://motivetoday.com/medical-courier-insurance.html)
+- [Box Truck Insurance Quote: What to Prepare](https://motivetoday.com/box-truck-insurance-quote.html)
+- [Household Goods Motor Carrier Insurance & BMC-34 Filing](https://motivetoday.com/household-goods.html)
+- [Tow Truck Insurance Illinois: Coverage & Requirements](https://motivetoday.com/tow-truck-insurance-illinois.html)
+- [Commercial Fleet Insurance: Coverage & Quote Guide](https://motivetoday.com/commercial-fleet-insurance.html)

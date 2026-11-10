@@ -2,22 +2,38 @@
 
 ## Contact details
 
-All 31 site footers load their locations, phone number, states, company name and
-social links from `data/site-footer.json` through `app.js`. Wood Dale uses suite
-208. The repeated footer addresses have been removed from the HTML.
+Footers load their business details from `data/site-footer.json` through
+`app.js`. This same JSON generates marked contact details and agency/location
+JSON-LD at build time. Wood Dale uses suite 208. Location `id` values are stable
+identifiers: keep them when an office address changes. Do not edit generated
+business details independently in HTML.
 
-For the initial deployment, upload the 31 updated HTML pages, `app.js`, and
-`data/site-footer.json` together. Upload the updated `.htaccess` as well to block
-project documentation and audit folders. Do not upload the audit folder.
+After changing the JSON or published content, run:
 
-After this initial deployment, update footer details by uploading only
-`data/site-footer.json`. Footer data is fetched without caching on each page
-load. If the data cannot load or is invalid, visitors retain Contact and Privacy
-links instead of seeing an old address. JavaScript is required for the full
-footer. Preview through an HTTP server, not by double-clicking HTML files.
+```sh
+node scripts/sync-business-data.mjs
+node scripts/sync-discovery.mjs
+node scripts/sync-business-data.mjs --check
+node scripts/sync-discovery.mjs --check
+node --test tests/business-data.test.mjs tests/discovery.test.mjs
+```
 
-Addresses in page content (such as Contact Us) are separate from the footer and
-must still be updated when a location changes.
+The existing `sitemap.xml` is the explicit published-page manifest. Add only
+confirmed public, indexable, self-canonical HTML URLs; never redirects or drafts.
+Maintain `lastmod` using known substantive edit dates, not upload times. The
+discovery script validates coverage and generates `llms.txt` from this manifest
+and current page titles. Use `--verify-live` to check every listed URL over HTTP.
+Generated schema supplements existing nodes rather than creating duplicate
+articles, services or FAQs. FAQ answers in `<details>` are synchronized from
+visible text. Run checks before manually uploading changes to GoDaddy cPanel.
+
+Upload changed public HTML, the canonical JSON, `sitemap.xml` and `llms.txt`
+together when ready. Do not upload audit directories, tests or maintenance
+scripts. CI validates generated data but does not deploy the website.
+
+If footer JSON cannot load, Contact and Privacy links remain usable. JavaScript
+is required for the full footer, but contact and SEO output is static. Preview
+through an HTTP server, not by double-clicking HTML files.
 
 ## Daily Google rating refresh
 

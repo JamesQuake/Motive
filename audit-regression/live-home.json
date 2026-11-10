@@ -1,0 +1,18 @@
+{
+  "responses": [
+    {
+      "url": "https://player.vimeo.com/video/1226032927?background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0&muted=1&controls=0&playsinline=1",
+      "status": 401
+    },
+    {
+      "url": "https://player.vimeo.com/cdn-cgi/challenge-platform/scripts/precursor/main.js?ray=a586e6e8dc13f5fb",
+      "status": 302
+    },
+    {
+      "url": "https://player.vimeo.com/cdn-cgi/challenge-platform/h/b/scripts/precursor/8340802ab0bb/main.js?ray=a586e6e8dc13f5fb",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "footerCount": 1
+}

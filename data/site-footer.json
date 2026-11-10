@@ -4,8 +4,8 @@
   "phone": "888 943 0888",
   "phoneHref": "tel:8889430888",
   "locations": [
-    { "street": "4801 Southwick Dr, Suite 270", "city": "Matteson, IL 60443" },
-    { "street": "333 N Wood Dale Rd # 208", "city": "Wood Dale, IL 60191" }
+    { "id": "matteson", "street": "4801 Southwick Dr, Suite 270", "city": "Matteson, IL 60443" },
+    { "id": "wood-dale", "street": "333 N Wood Dale Rd # 208", "city": "Wood Dale, IL 60191" }
   ],
   "states": ["Illinois", "Indiana", "Wisconsin"],
   "socials": [
