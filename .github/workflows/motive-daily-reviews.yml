@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "30 8 * * *"
+    - cron: "0 7 * * *"
       timezone: "America/Chicago"
 
 permissions:
@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   collect-and-validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
 
     steps:
@@ -59,7 +59,7 @@ jobs:
   publish:
     needs: collect-and-validate
     if: github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: write

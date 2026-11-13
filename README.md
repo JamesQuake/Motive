@@ -64,9 +64,9 @@ in the repository; the page does not fetch them in visitors' browsers.
 ## Daily Google rating refresh
 
 The GitHub Actions workflow `.github/workflows/motive-daily-reviews.yml` runs
-daily at 08:30 America/Chicago and supports a manual run. It uses a GitHub-hosted
-Ubuntu runner and Playwright Chromium; no local computer, Google account, API
-key, CAPTCHA bypass, or Google Cloud billing is required.
+daily at 07:00 America/Chicago and supports a manual run. It uses a GitHub-hosted
+Ubuntu 24.04 runner and Playwright Chromium; no local computer, Google account,
+API key, CAPTCHA bypass, or Google Cloud billing is required.
 
 The job reads the public Google Maps listing, verifies the Motive Insurance
 Solutions name and its website or Matteson address, and requires a valid rating
