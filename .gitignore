@@ -1,0 +1,13 @@
+# Local audit reports, screenshots, and one-off verification scripts
+/audit/
+/audit-*/
+
+# File-manager thumbnails and operating-system metadata
+/.tmb/
+.DS_Store
+Thumbs.db
+
+# Local dependencies and temporary output
+node_modules/
+*.log
+/data/site-rating.json.*.tmp
