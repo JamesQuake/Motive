@@ -64,7 +64,7 @@ in the repository; the page does not fetch them in visitors' browsers.
 ## Daily Google rating refresh
 
 The GitHub Actions workflow `.github/workflows/motive-daily-reviews.yml` runs
-daily at 07:00 America/Chicago and supports a manual run. It uses a GitHub-hosted
+daily at 07:05 America/Chicago and supports a manual run. It uses a GitHub-hosted
 Ubuntu 24.04 runner and Playwright Chromium; no local computer, Google account,
 API key, CAPTCHA bypass, or Google Cloud billing is required.
 
