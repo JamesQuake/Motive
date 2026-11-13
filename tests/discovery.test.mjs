@@ -8,6 +8,30 @@ const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const data=JSON.parse(read('data/site-footer.json'));
 const urls=[...read('sitemap.xml').matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 const agencyId='https://motivetoday.com/#agency';
+
+test('legacy auto URLs redirect directly and the empty test page returns an error',()=>{
+ const rules=read('.htaccess');
+ assert.ok(rules.includes('RewriteRule ^car(?:\\.html)?/?$ /auto.html [R=301,L]'));
+ assert.ok(rules.includes('RewriteRule ^test(?:\\.html)?/?$ - [R=404,L]'));
+ assert.ok(rules.indexOf('^car(?:')<rules.indexOf('^([A-Za-z0-9_-]+)'));
+});
+
+test('error-page recovery links and assets work at nested missing URLs',()=>{
+ const html=read('404.html');
+ assert.match(html,/<meta name="robots" content="noindex, follow"/);
+ for(const m of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){
+  const value=m[1];if(value.startsWith('#'))continue;
+  const direct=new URL(value,'https://motivetoday.com/404.html');
+  const nested=new URL(value,'https://motivetoday.com/solutions/missing-page');
+  assert.equal(nested.href,direct.href,value);
+  if(nested.origin==='https://motivetoday.com')assert.ok(fs.existsSync(path.join(root,nested.pathname.slice(1)||'index.html')),value);
+ }
+});
+
+test('Illinois towing guide is linked from the relevant towing page',()=>{
+ assert.match(read('towing.html'),/href="tow-truck-insurance-illinois.html"/);
+ assert.ok(!read('surety-bonds.html').includes('href="freight-broker.html"'));
+});
 test('directory contains exactly the published canonical HTML URLs',()=>{
  const links=[...read('llms.txt').matchAll(/^- \[[^\]]+\]\(([^)]+)\)/gm)].map(m=>m[1]);
  assert.equal(new Set(urls).size,urls.length);

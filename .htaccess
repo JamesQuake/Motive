@@ -10,6 +10,9 @@ RewriteRule ^audit(?:-[^/]+)?(?:/|$) - [F,L,NC]
 # Custom error page
 ErrorDocument 404 /404.html
 
+# An empty development placeholder is not a public page.
+RewriteRule ^test(?:\.html)?/?$ - [R=404,L]
+
 # Daily rating maintenance runs from the command line, never through the website.
 <FilesMatch "^(scrape-google-reviews\.ps1|upload-google-rating\.ps1|google-rating-extract\.js|site-rating\.json\.[a-f0-9]+\.tmp)$">
   Require all denied
@@ -21,6 +24,7 @@ RewriteCond %{HTTP_HOST} !^motivetoday\.com$ [NC]
 RewriteRule ^ https://motivetoday.com%{REQUEST_URI} [R=301,L]
 
 # Preserve existing WordPress URLs during static replacement
+RewriteRule ^car(?:\.html)?/?$ /auto.html [R=301,L]
 RewriteRule ^solutions/changes-to-policy/?$ /changes-to-policy.html [R=301,L]
 RewriteRule ^solutions/file-a-claim/?$ /file-a-claim.html [R=301,L]
 RewriteRule ^insights-blogs/?$ /commercial.html [R=301,L]

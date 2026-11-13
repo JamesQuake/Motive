@@ -1,0 +1,642 @@
+{
+  "checkedAt": "2026-11-13T18:32:35.619Z",
+  "requests": [
+    {
+      "url": "https://motivetoday.com/",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 27791
+    },
+    {
+      "url": "https://motivetoday.com/about-us.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/about-us.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 19451
+    },
+    {
+      "url": "https://motivetoday.com/amazon-relay-requirements.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/amazon-relay-requirements.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 17100
+    },
+    {
+      "url": "https://motivetoday.com/bmc-84-vs-bmc-85.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/bmc-84-vs-bmc-85.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 15213
+    },
+    {
+      "url": "https://motivetoday.com/bobtail-vs-non-trucking-liability.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/bobtail-vs-non-trucking-liability.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 15158
+    },
+    {
+      "url": "https://motivetoday.com/box-truck-loads-illinois.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/box-truck-loads-illinois.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 60945
+    },
+    {
+      "url": "https://motivetoday.com/bundled-insurance.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/bundled-insurance.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 25575
+    },
+    {
+      "url": "https://motivetoday.com/auto.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/auto.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 15124
+    },
+    {
+      "url": "https://motivetoday.com/careers.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/careers.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 10862
+    },
+    {
+      "url": "https://motivetoday.com/changes-to-policy.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/changes-to-policy.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 10810
+    },
+    {
+      "url": "https://motivetoday.com/commercial.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/commercial.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 18482
+    },
+    {
+      "url": "https://motivetoday.com/commercial-truck.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/commercial-truck.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 29213
+    },
+    {
+      "url": "https://motivetoday.com/commercial-van.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/commercial-van.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 23668
+    },
+    {
+      "url": "https://motivetoday.com/condo.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/condo.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 14361
+    },
+    {
+      "url": "https://motivetoday.com/contact-us.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/contact-us.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 14136
+    },
+    {
+      "url": "https://motivetoday.com/file-a-claim.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/file-a-claim.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 11919
+    },
+    {
+      "url": "https://motivetoday.com/general-liability.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/general-liability.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 24882
+    },
+    {
+      "url": "https://motivetoday.com/how-to-start-a-box-truck-business-illinois.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/how-to-start-a-box-truck-business-illinois.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 44214
+    },
+    {
+      "url": "https://motivetoday.com/homeowners.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/homeowners.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 14792
+    },
+    {
+      "url": "https://motivetoday.com/ilivs.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/ilivs.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 25361
+    },
+    {
+      "url": "https://motivetoday.com/motorcycle.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/motorcycle.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 14127
+    },
+    {
+      "url": "https://motivetoday.com/personal.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/personal.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 20810
+    },
+    {
+      "url": "https://motivetoday.com/privacy.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/privacy.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 19739
+    },
+    {
+      "url": "https://motivetoday.com/refer-a-friend.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/refer-a-friend.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 10991
+    },
+    {
+      "url": "https://motivetoday.com/rental.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/rental.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 14751
+    },
+    {
+      "url": "https://motivetoday.com/specialtytransportation.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/specialtytransportation.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 25081
+    },
+    {
+      "url": "https://motivetoday.com/surety-bonds.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/surety-bonds.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 24883
+    },
+    {
+      "url": "https://motivetoday.com/testimonials.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/testimonials.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 23706
+    },
+    {
+      "url": "https://motivetoday.com/workers-compensation.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/workers-compensation.html\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 18887
+    },
+    {
+      "url": "https://motivetoday.com/medical-courier-insurance.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/medical-courier-insurance.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 54221
+    },
+    {
+      "url": "https://motivetoday.com/box-truck-operating-costs-matteson.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/box-truck-operating-costs-matteson.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 34514
+    },
+    {
+      "url": "https://motivetoday.com/box-truck-insurance-quote.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/box-truck-insurance-quote.html\">"
+      ],
+      "noindex": false,
+      "bytes": 24127
+    },
+    {
+      "url": "https://motivetoday.com/household-goods.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/household-goods.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 43915
+    },
+    {
+      "url": "https://motivetoday.com/tow-truck-insurance-illinois.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/tow-truck-insurance-illinois.html\">"
+      ],
+      "noindex": false,
+      "bytes": 31456
+    },
+    {
+      "url": "https://motivetoday.com/black-car.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/black-car.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 30016
+    },
+    {
+      "url": "https://motivetoday.com/car-hauling.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/car-hauling.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 33158
+    },
+    {
+      "url": "https://motivetoday.com/commercial-fleet-insurance.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/commercial-fleet-insurance.html\">"
+      ],
+      "noindex": false,
+      "bytes": 35111
+    },
+    {
+      "url": "https://motivetoday.com/nemt.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/nemt.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 32059
+    },
+    {
+      "url": "https://motivetoday.com/shuttle.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/shuttle.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 30686
+    },
+    {
+      "url": "https://motivetoday.com/specialty-transportation-insurance-guide.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/specialty-transportation-insurance-guide.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 25572
+    },
+    {
+      "url": "https://motivetoday.com/towing.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/towing.html\"/>"
+      ],
+      "noindex": false,
+      "bytes": 30162
+    },
+    {
+      "url": "https://motivetoday.com/robots.txt",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 118,
+      "body": "User-agent: *\nAllow: /\nDisallow: /Version%201.2/\nDisallow: /Version 1.2/\nSitemap: https://motivetoday.com/sitemap.xml\n"
+    },
+    {
+      "url": "https://motivetoday.com/sitemap.xml",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 6089,
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\r\n  <url><loc>https://motivetoday.com/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>\r\n  <url><loc>https://motivetoday.com/about-us.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/amazon-relay-requirements.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/bmc-84-vs-bmc-85.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/bobtail-vs-non-trucking-liability.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/box-truck-loads-illinois.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/bundled-insurance.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/auto.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/careers.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/changes-to-policy.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/commercial.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/commercial-truck.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\r\n  <url><loc>https://motivetoday.com/commercial-van.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\r\n  <url><loc>https://motivetoday.com/condo.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/contact-us.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/file-a-claim.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/general-liability.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\r\n  <url><loc>https://motivetoday.com/how-to-start-a-box-truck-business-illinois.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/homeowners.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/ilivs.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/motorcycle.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/personal.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/privacy.html</loc><lastmod>2026-07-17</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>\r\n  <url><loc>https://motivetoday.com/refer-a-friend.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>\r\n  <url><loc>https://motivetoday.com/rental.html</loc><lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>\r\n  <url><loc>https://motivetoday.com/specialtytransportation.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\r\n  <url><loc>https://motivetoday.com/surety-bonds.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\r\n  <url><loc>https://motivetoday.com/testimonials.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>\r\n  <url><loc>https://motivetoday.com/workers-compensation.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\r\n  <url><loc>https://motivetoday.com/medical-courier-insurance.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/box-truck-operating-costs-matteson.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/box-truck-insurance-quote.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/household-goods.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/tow-truck-insurance-illinois.html</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>\r\n  <url><loc>https://motivetoday.com/black-car.html</loc><lastmod>2026-11-10</lastmod></url>\r\n  <url><loc>https://motivetoday.com/car-hauling.html</loc><lastmod>2026-11-10</lastmod></url>\r\n  <url><loc>https://motivetoday.com/commercial-fleet-insurance.html</loc><lastmod>2026-11-10</lastmod></url>\r\n  <url><loc>https://motivetoday.com/nemt.html</loc><lastmod>2026-11-10</lastmod></url>\r\n  <url><loc>https://motivetoday.com/shuttle.html</loc><lastmod>2026-11-10</lastmod></url>\r\n  <url><loc>https://motivetoday.com/specialty-transportation-insurance-guide.html</loc><lastmod>2026-11-10</lastmod></url>\r\n  <url><loc>https://motivetoday.com/towing.html</loc><lastmod>2026-11-10</lastmod></url>\r\n</urlset>\r\n"
+    },
+    {
+      "url": "https://motivetoday.com/car.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link rel=\"canonical\" href=\"https://motivetoday.com/auto.html\">"
+      ],
+      "noindex": true,
+      "bytes": 1126
+    },
+    {
+      "url": "https://motivetoday.com/car",
+      "status": 301,
+      "location": "https://motivetoday.com/car.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 280
+    },
+    {
+      "url": "https://motivetoday.com/car/",
+      "status": 301,
+      "location": "https://motivetoday.com/car.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 280
+    },
+    {
+      "url": "https://motivetoday.com/freight-broker.html",
+      "status": 301,
+      "location": "https://motivetoday.com/specialtytransportation.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 300
+    },
+    {
+      "url": "https://motivetoday.com/sr22.html",
+      "status": 301,
+      "location": "https://motivetoday.com/ilivs.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 282
+    },
+    {
+      "url": "https://motivetoday.com/mandatory-insurance-vehicle-services.html",
+      "status": 301,
+      "location": "https://motivetoday.com/ilivs.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 282
+    },
+    {
+      "url": "https://motivetoday.com/solutions/changes-to-policy/",
+      "status": 301,
+      "location": "https://motivetoday.com/changes-to-policy.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 294
+    },
+    {
+      "url": "https://motivetoday.com/solutions/file-a-claim/",
+      "status": 301,
+      "location": "https://motivetoday.com/file-a-claim.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 289
+    },
+    {
+      "url": "https://motivetoday.com/insights-blogs/",
+      "status": 301,
+      "location": "https://motivetoday.com/commercial.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 287
+    },
+    {
+      "url": "https://motivetoday.com/commercial",
+      "status": 301,
+      "location": "https://motivetoday.com/commercial.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 287
+    },
+    {
+      "url": "https://motivetoday.com/Version%201.2/auto.html",
+      "status": 301,
+      "location": "https://motivetoday.com/auto.html",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 281
+    },
+    {
+      "url": "https://motivetoday.com/index.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [
+        "<link data-motive-seo=\"1\" href=\"https://motivetoday.com/\" rel=\"canonical\"/>"
+      ],
+      "noindex": false,
+      "bytes": 27791
+    },
+    {
+      "url": "https://motivetoday.com/404.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 5041
+    },
+    {
+      "url": "https://motivetoday.com/test.html",
+      "status": 200,
+      "location": null,
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 0
+    },
+    {
+      "url": "https://motivetoday.com/indexing-audit-missing-20261113",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 13
+    },
+    {
+      "url": "https://motivetoday.com/solutions/indexing-audit-missing-20261113",
+      "status": 404,
+      "location": null,
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 13
+    },
+    {
+      "url": "http://motivetoday.com/",
+      "status": 301,
+      "location": "https://motivetoday.com/",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 272
+    },
+    {
+      "url": "https://www.motivetoday.com/",
+      "status": 301,
+      "location": "https://motivetoday.com/",
+      "robots": null,
+      "canonical": [],
+      "noindex": false,
+      "bytes": 272
+    }
+  ]
+}
